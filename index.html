@@ -12,7 +12,7 @@
     
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="assets/css/card.css">
@@ -42,12 +42,6 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <div class="search_box">
-                  <div class="search_btn"><i class="fa fa-search"></i></div>
-                  <input type="text" class="input_search" placeholder="Search">
-                </div>
-              </li> 
-              <li class="nav-item active">
                 <a class="nav-link" href="index.html">Home
                   <span class="sr-only">(current)</span>
                 </a>
@@ -56,22 +50,19 @@
                 <a class="nav-link" href="products.html">Our Products</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="login.html">Log In</a>
               </li>
-              <li class="nav-item">
-                <div class="navbar-icon">
-                  <i class="fa fa-shopping-cart"></i>
-                </div>
-              </li>
-              <li class="nav-item">
-                <div class="navbar-icon">
-                  <i class="fa fa-clipboard"></i>
-                </div>
-              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Status</a>
+              </li> -->
             </ul>
           </div>
         </div>
       </nav>
+      
     </header>
 
     <!-- Page Content -->
@@ -91,6 +82,10 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="search_box">
+      <div class="search_btn"><i class="fa fa-search"></i></div>
+      <input type="text" class="input_search" placeholder="Search">
     </div>
     <!-- Banner Ends Here -->
 
@@ -281,26 +276,9 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
 
   </body>
 
