@@ -14,8 +14,4 @@ router.get('/page', function(req, res, next){
   res.render('page')
 })
 
-/* GET api */
-
-
-
 module.exports = router;
