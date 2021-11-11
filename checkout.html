@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>EveryDay</title>
+    <title>EveryDay Checkout</title>
+    <link rel="icon" href="./assets/images/logo-1.png">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
@@ -15,7 +16,23 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/checkout-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    <script>
+      function go() {
+        var imgObject = document.getElementById("payImage");
+        var pay = document.getElementById("pay");
+        imgObject.src = "./assets/images/qr code 2.png";
+        pay.innerHTML = "แนบหลักฐานการโอนเงิน : " ;
+      }
+      </script>
+      <script>
+        $(document).ready(function(){
+          $('#gopay').click(function(){
+            $('#addimage').toggle();
+          });
+        });
+        </script>
   </head>
 
   <body>
@@ -48,11 +65,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="products.html">Our Products</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="cart.html">Cart</a>
-                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="login.html">Log In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i></a>
                 </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="#">Status</a>
@@ -63,70 +80,79 @@
         </nav>
       </header>
 
-       <!-- Page Content 
+       <!-- Page Content -->
        <div class="page-heading cart-heading header-text">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <div class="text-content">
-                <h4>Have fun reading the book</h4>
-                <h2>EveryDay cart</h2>
+                <h4>Thank you</h4>
+                <h2>EveryDay checkout</h2>
               </div>
             </div>
           </div>
         </div>
-      </div>-->
-
-
-      <br>
-      
-      
-      
+      </div>
 
       <!-- ข้อมูลในการจัดส่ง -->
-      <div style="display: flex;">
-      <fieldset class="field1">
-        <legend class="legend">ข้อมูลในการจัดส่ง</legend>
-        <label for="fname" class="font1"> ชื่อ-สกุล: </label><br>
-        <input type="text" id="fname" name="fname" placeholder="กรอกชื่อ-สกุล"><br>
-        <label for="email" class="font1"> Email: </label><br>
-        <input type="email"id="email" name="email"  size="93"><br>
-        <label for="phone" class="font1" > โทรศัพท์: </label><br>
-        <input type="tel" id="phone" name="phone" placeholder="+66"><br>
-        <label for="address" class="font1"> ที่อยู่: </label><br>
-        <input type="text" id="address" name="address"  size="93"><br>
-        <label for="zip" class="font1"> รหัสไปรษณีย์: </label><br>
-        <input type="text" id="zip" name="zip" pattern="[0-9]{4}">
-      </fieldset>
-
-      <fieldset class="field2">
-      <h2>สรุปรายการสินค้า</h2>
-      <label for="fbook">  </label><br>
-      <select id="fbook" name="fbook" size="3">
-        <option value="book1">Witchoar (วิชชอร์) เล่ม 1 : หยดน้ำแห่งกัลดราบก</option>
-        <option value="book2">Witchoar (วิชชอร์) เล่ม 2 : เปลวไฟแห่งเนโคร</option>
-        <option value="book3">Witchoar (วิชชอร์) เล่ม 3 : ถ้วยเเก้วแห่งโมนาเซีย</option>
-      </select><br><br><br>
-      <label class="font1">ราคารวมทั้งหมด <span class="price">1725.00</span>บาท</label> 
-      </fieldset>
-      <br>
-       
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <fieldset class="field1">
+              <legend class="legend">ยืนยันคำสั่งซื้อ</legend>
+              <label for="fname" class="font1"> ชื่อ-สกุล: </label><br>
+              <input type="text" id="fname" name="fname" placeholder="กรอกชื่อ-สกุล"><br>
+              <label for="email" class="font1"> Email: </label><br>
+              <input type="email"id="email" name="email" "><br>
+              <label for="phone" class="font1" > โทรศัพท์: </label><br>
+              <input type="tel" id="phone" name="phone" placeholder="+66"><br>
+              <label for="address" class="font1"> ที่อยู่: </label><br>
+              <input type="text" id="address" name="address"><br>
+            </fieldset>
+            <a href="cart.html"><button class="return">BACK</button></a>
+          <a href="index.html"><input type="submit" value="ACCEPT" class="submit"></a>
+          </div>
+          <div class="col-md-4">
+            <fieldset class="field2">
+              <h2>สรุปรายการสินค้า</h2>
+              <label for="fbook">  </label><br>
+              <table>
+                <tr>
+                  <td>Witchoar (วิชชอร์) เล่ม 2 : เปลวไฟแห่งเนโคร x 2</td>
+                  <td>700.00฿</td>
+                </tr>
+                <tr>
+                  <td>Witchoar (วิชชอร์) เล่ม 3 : ถ้วยเเก้วแห่งโมนาเซีย</td>
+                  <td>310.00฿</td>
+                </tr>
+                <tr>
+                  <td>ค่าจัดส่ง</td>
+                  <td>50.00฿</td>
+                </tr>
+              </table><br>
+              <label class="font1">ราคารวมทั้งหมด <span class="price">1060.00</span>บาท</label> 
+            </fieldset>
+            <button class="place" onclick="go()" id="gopay">Place order</button>
+            <img id="payImage" src="">
+            <label for="image" class="font1" id="pay"></label><br>
+            <input type="file" id="addimage" name="image" style="display:none"><br>
+          </div>
+        </div>
       </div>
-    
-     <!-- ปุ่ม -->
 
-     <a href="cart.html"><input type="submit" value="back" class="return"></a>
-     <a href="pay.html"><input type="submit" value="accpet" class="submit"></a>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="inner-content">
+                <p>EveryDay BY My team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       
-      
-
-       
-
-
-
-
-        
       <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
