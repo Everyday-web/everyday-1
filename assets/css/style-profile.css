@@ -1,0 +1,36 @@
+.head{
+    font-size: 60px;
+    margin-left: 3em;
+    margin-top: 1em;
+}
+
+.field1{
+    border-radius: 8px;
+    border: 5px solid lightskyblue;
+    margin-top: 1em;
+    margin-left: 10em;
+    
+    padding: 10px;
+    width: 700px;
+    height: 400px;;
+}
+
+.label1{
+    font-size: 30px;
+}
+
+#name{
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#mail{
+    padding: 10px;
+    border-radius: 4px;
+
+}
+
+#pass{
+    padding: 10px;
+    border-radius: 4px;
+}

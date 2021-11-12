@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/style-pay.css">
+    <link rel="stylesheet" href="assets/css/style-status.css">
 
   </head>
   <body>
@@ -64,55 +65,47 @@
       <br>
       <br>
       
-              <!-- รูป qr -->
-      <form action=""method="POST">
-      <div class="qr" >
-        <img src="../everyday-1/assets/images/qr code 2.png"><br><br><br>
-        <b>หมายเลขพร้อมเพย์ 089-xxx-xxxx</b><br><br>
-        <input type="file" id="slip" name="slip" onchange="loadFile(event)">
-        <input type="submit" value="accpet">
-      </div>
-    </form>
-      <script>
-        var loadFile = function(event) {
-        var output = document.getElementById('output');
-        output.src = URL.createObjectURL(event.target.files[0]);
-        output.onload = function() {
-            URL.revokeObjectURL(output.src) // free memory
-            }
-        };
-        </script>
+            <!-- เช็คสถานะพัสดุ -->
+      <h1 class="head">เช็คสถานะพัสดุ</h1>
+      <div style="display: inline;">
+      <label for="fstatus" class="head2">กรอกหมายเลขรหัสสินค้า</label><br>
+     <input type="text" id="fstatus" name="fstatus" size="80">
+     <input type="submit" value="search" class="search"><br><br>
+
+
+                <!-- ตาราง -->
+     <table class="center">
+         <tr>
+             <th>วันที่</th>
+             <th>ผู้สั่งสินค้า</th>
+             <th>รหัสสินค้า</th>
+             <th>สถานะสินค้า</th>
+             <th>รายการสินค้า</th>
+         </tr>
+         <tr>
+             <td>10/11/21</td>
+             <td>red</td>
+             <td>1234</td>
+             <td>จัดส่งสินค้าของเรียบร้อย</td>
+             <td><a href="#">รายละเอียด</a></td>
+         </tr>
+         <tr>
+            <td>10/11/21</td>
+            <td>green</td>
+            <td>2315</td>
+            <td>อยู่ระหว่างดำเนินการจัดส่ง</td>
+            <td><a href="#">รายละเอียด</a></td>
+         </tr>
+         <tr>
+            <td>10/11/21</td>
+            <td>blue</td>
+            <td>2425</td>
+            <td>อยู่ระหว่างการเตรียมสินค้า</td>
+            <td><a href="#">รายละเอียด</a></td>
+         </tr>
+     </table>
         
-        <!-- <script>
-            var click = alert('ชำระสินค้าแล้ว สถานะสินค้าอยู่ระหว่างดำเนินการ');</script>
-        <script>window.location.href='everyday-1/pay.html'</script> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           <!-- Bootstrap core JavaScript -->

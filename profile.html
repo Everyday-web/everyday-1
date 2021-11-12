@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/style-pay.css">
+    <link rel="stylesheet" href="assets/css/style-profile.css">
 
   </head>
   <body>
@@ -63,56 +64,20 @@
       </header>
       <br>
       <br>
+
+      <h1 class="head">Profile</h1>
+
+      <fieldset class="field1">
+          <label for="name" class="label1">Your name :</label><br>
+          <input type="text" id="name" name="name" size="50"><br>
+          <label for="pass" class="label1">Your password :</label><br>
+          <input type="text" id="pass" name="pass" size="50"><br>
+          <label for="mail" class="label1">Your email :</label><br>
+          <input type="text" id="mail" name="mail" size="50"><br>
+      </fieldset>
       
-              <!-- รูป qr -->
-      <form action=""method="POST">
-      <div class="qr" >
-        <img src="../everyday-1/assets/images/qr code 2.png"><br><br><br>
-        <b>หมายเลขพร้อมเพย์ 089-xxx-xxxx</b><br><br>
-        <input type="file" id="slip" name="slip" onchange="loadFile(event)">
-        <input type="submit" value="accpet">
-      </div>
-    </form>
-      <script>
-        var loadFile = function(event) {
-        var output = document.getElementById('output');
-        output.src = URL.createObjectURL(event.target.files[0]);
-        output.onload = function() {
-            URL.revokeObjectURL(output.src) // free memory
-            }
-        };
-        </script>
-        
-        <!-- <script>
-            var click = alert('ชำระสินค้าแล้ว สถานะสินค้าอยู่ระหว่างดำเนินการ');</script>
-        <script>window.location.href='everyday-1/pay.html'</script> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
+    
 
 
           <!-- Bootstrap core JavaScript -->
