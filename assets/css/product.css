@@ -15,46 +15,4 @@ ul.breadcrumb {
     color: #fff;
     content: "|\00a0";
   }
-  /*---------------search------------------*/
-.search_box{
-	background: #008ecc;
-	position: relative;
-	padding: 12px;
-	border-radius: 25px;
-	display: flex;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 8%;
-}
-
-.search_box .search_btn{
-	width: 70px;
-	height: 50px;
-	border-radius: 40%;
-	background: #008ecc;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	margin-right: 20px;
-	cursor: pointer;
-}
-
-.search_box .input_search{
-	outline: none;
-	border: 0;
-	background: #008ecc;
-	border-radius: 25px;
-	padding: 15px 20px;
-	width: 100%; 
-	height: 50px;
-	color: #fff;
-	font-size: 20px;
-}
-
-::placeholder {
-  color: #fff;
-}
-
-/*---------------search------------------*/
+ 

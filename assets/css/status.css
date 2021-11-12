@@ -1,0 +1,40 @@
+.center {
+    margin: 8% auto;
+    width: 80%;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  
+th, td {
+    padding: 16px;
+    font-size: 20px;
+    font-family: 'Itim', cursive;
+    background: #ddd;
+    border-top: 2px solid #ddd; 
+    border-bottom: 2px solid #fff; 
+    text-align: center;
+  }
+
+.center a{
+    color: #008ecc;
+}
+
+.center a:hover{
+    color: #1a6692;
+}
+.center img{
+    width: 50%;
+}
+.img-head img{
+    position: absolute;
+    top: 660px;
+    right: 108px;
+    width: 120px;
+}
+
+
+

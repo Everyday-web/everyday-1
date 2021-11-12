@@ -51,6 +51,18 @@ h1,h2,h3,h4,h5,h6 {
 .product-detail-heading {
 	background-image: url(../images/products-detail-heading.jpg);
 }
+.checkout-heading {
+	background-image: url(../images/checkout-heading.jpg);
+}
+.profile-heading {
+	background-image: url(../images/profile-heading.jpg);
+}
+.order-detail-heading {
+	background-image: url(../images/order-detail-heading.jpg);
+}
+.status-heading {
+	background-image: url(../images/status-heading.jpg);
+}
 
 .page-heading {
 	padding: 210px 0px 130px 0px;
@@ -210,7 +222,6 @@ header .navbar {
 .navbar .navbar-nav .nav-item i{
 	color: #008ecc;
 	font-size: 24px;
-	margin: 0 15px;
 }
 .navbar .navbar-nav a.nav-link {
 	text-transform: capitalize;
@@ -324,8 +335,6 @@ header .navbar {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
     justify-content: center;
     position: absolute;
     left: 50%;
@@ -511,7 +520,77 @@ footer .inner-content p a {
 	border-color: #008ecc;
 	color: #fff;
 }
+ /*---------------search------------------*/
+ .search_box{
+	background: #008ecc;
+	position: relative;
+	padding: 12px;
+	border-radius: 24px;
+	display: flex;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 8%;
+}
 
+.search_box .search_btn{
+	width: 70px;
+	height: 50px;
+	border-radius: 40%;
+	background: #008ecc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.search_box .input_search{
+	outline: none;
+	border: 0;
+	background: #008ecc;
+	border-radius: 25px;
+	padding: 15px 20px;
+	width: 100%; 
+	height: 50px;
+	color: #fff;
+	font-size: 20px;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+/*---------------search------------------*/
+.sub-menus ul {
+    position: absolute;
+    top: 88px;
+    background-color: #fff;
+    min-width: 136px;
+    box-shadow: 0px 0px 8px #636363;
+    border-radius: 4px;
+    display: none;
+}
+.sub-menus:hover ul {
+    display: block;
+}
+.sub-menus ul li a {
+    display: block;
+	font-size: 18px;
+	padding: 4px 0px 4px 12px;
+	text-align: left;
+    color: #4a4a4a;
+}
+.sub-menus ul::before {
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: -8px;
+	left: 0px;
+}
 
 
 /* Responsive Style */
