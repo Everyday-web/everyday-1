@@ -210,7 +210,9 @@ input:focus:-moz-placeholder {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="submit"] {
+input[type="submit"],
+input[type="tel"],
+input[type="address"] {
   font-size:20px;
 }
 
