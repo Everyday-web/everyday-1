@@ -11,7 +11,18 @@
     margin-left: 10em;
     
     padding: 10px;
-    width: 700px;
+    width: 600px;
+    height: 300px;
+}
+
+.field2{
+    border-radius: 8px;
+    border: 5px solid lightskyblue;
+    margin-top: 1em;
+    margin-left: 2em;
+    
+    padding: 10px;
+    width: 600px;
     height: 400px;;
 }
 
@@ -34,3 +45,28 @@
     padding: 10px;
     border-radius: 4px;
 }
+
+#npass{
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#rpass{
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.save{
+    font-size: 25px;
+    margin-left: 10em;
+    margin-top: 1em;
+
+}
+
+.save2{
+    font-size: 25px;
+    margin-left: 7em;
+    margin-top: 1em;
+
+}
+

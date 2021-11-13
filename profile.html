@@ -65,16 +65,32 @@
       <br>
       <br>
 
+            <!-- Profile -->
       <h1 class="head">Profile</h1>
-
+      <div style="display: flex;">
       <fieldset class="field1">
           <label for="name" class="label1">Your name :</label><br>
-          <input type="text" id="name" name="name" size="50"><br>
-          <label for="pass" class="label1">Your password :</label><br>
-          <input type="text" id="pass" name="pass" size="50"><br>
+          <input type="text" id="name" name="name" size="63"><br>
+         
           <label for="mail" class="label1">Your email :</label><br>
-          <input type="text" id="mail" name="mail" size="50"><br>
+          <input type="email" id="mail" name="mail" size="63"><br>
+          <input type="submit" value="Save" class="save">
       </fieldset>
+     
+      <fieldset class="field2">
+      
+        <label for="pass" class="label1">Current password :</label><br>
+        <input type="text" id="pass" name="pass" size="63"><br>
+        <label for="npass" class="label1">New password :</label><br>
+        <input type="text" id="npass" name="npass" size="63"><br>
+        <label for="rpass" class="label1">Re-enter password :</label><br>
+        <input type="text" id="rpass" name="rpass" size="63"><br>
+        
+        <input type="submit" value="Update password" class="save2">
+    </fieldset>
+      </div>
+
+     
       
       
     
