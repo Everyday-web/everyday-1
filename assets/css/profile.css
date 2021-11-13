@@ -48,3 +48,15 @@
     font-size: 18px;
     font-family: inherit;
 }
+@media (max-width: 768px) {
+    .head h1{
+        font-size: 48px;
+        margin: 48px 140px;
+    }
+    .head img{
+        position: absolute;
+        top: 464px;
+        left: 64px;
+        width: 80px;
+    }
+  }

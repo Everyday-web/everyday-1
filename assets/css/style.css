@@ -16,7 +16,7 @@ p {
 	line-height: 24px;
 }
 a {
-	text-decoration: none!important;
+text-decoration: none!important;
 }
 ul {
 	padding: 0;
@@ -311,21 +311,6 @@ header .navbar {
 	letter-spacing: 5px;
 }
 
-.button {
-	border: none;
-	width: 40%;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 18px;
-	margin: 4px 2px;
-	cursor: pointer;
-	margin-left: 30%;
-	border-radius: 24px;
-	font-family: 'Caveat Brush', cursive;
-	background-color: #008ecc;
-}
 
 .owl-banner .owl-dots .owl-dot {
   border-radius: 3px;
@@ -419,28 +404,6 @@ header .navbar {
 	color: #008ecc;
 }
 
-.product-detail{
-	display: flex;
-	margin: 10%;
-	font-family: 'Itim', cursive;
-}
-.product-detail img{
-	width: fit-content;
-}
-.product-detail table,th,td{
-	border-top: black 2px solid;
-	margin-left: 8%;
-	font-size: 18px;
-}
-.product-detail th{
-	width: 10%;
-	vertical-align: top;
-}
-
-.product-detail td{
-	width: 40%;
-	vertical-align: top;
-}
 /* Footer */
 
 footer {
@@ -633,6 +596,12 @@ footer .inner-content p a {
 		right: 30px!important;
 		bottom: 30px!important;
 	}
+	.sub-menus ul {
+		position: static;
+	}
+	.sub-menus ul::before {
+		display: none;
+	}
 }
 
 @media (max-width: 992px) {
@@ -689,5 +658,11 @@ footer .inner-content p a {
 		position: relative;
 		right: 0;
 		bottom: 0;
+	}
+	.sub-menus ul {
+		position: static;
+	}
+	.sub-menus ul::before {
+		display: none;
 	}
 }

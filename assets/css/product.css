@@ -15,4 +15,13 @@ ul.breadcrumb {
     color: #fff;
     content: "|\00a0";
   }
- 
+  @media (max-width: 768px) {
+    ul.breadcrumb li {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 992px){
+    ul.breadcrumb li {
+      font-size: 18px;
+    }
+  }

@@ -29,12 +29,28 @@ th, td {
 .center img{
     width: 50%;
 }
-.img-head img{
-    position: absolute;
-    top: 660px;
-    right: 108px;
-    width: 120px;
-}
+@media (max-width: 768px) {
+    th, td {
+        padding: 4px;
+        font-size: 14px;
+        font-family: 'Itim', cursive;
+        background: #ddd;
+        border-top: 2px solid #ddd; 
+        border-bottom: 2px solid #fff; 
+        text-align: center;
+    }
+  }
+  @media (max-width: 992px){
+    th, td {
+        padding: 4px;
+        font-size: 14px;
+        font-family: 'Itim', cursive;
+        background: #ddd;
+        border-top: 2px solid #ddd; 
+        border-bottom: 2px solid #fff; 
+        text-align: center;
+    }
+  }
 
 
 
