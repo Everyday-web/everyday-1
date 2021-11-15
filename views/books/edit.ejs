@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="container" style="margin-top: 50px;">
+
+
+    <div class="card">
+        <div class="card-header">
+            Edit Book
+        </div>
+        <div class="card-body">
+            <form action="/books/update/<%= id %> " method="post" encType="multipart/form-data">
+                <img src="/<%= image %>" alt="Image" height="330px" width="230px">
+                <br><br>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="name" value="<%= name %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Details:</label>
+                    <input type="text" class="form-control" name="details" value="<%= details %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Price:</label>
+                    <input type="text" class="form-control" name="price" value="<%= price %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Quantity:</label>
+                    <input type="number" class="form-control" name="quantity" value="<%= quantity %>"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Image:</label>
+                    <input type="file" accept="image/*" class="form-control" id="upload_img" name="upload_img"
+                        value="<%= image %>" autocomplete="off">
+                </div>
+                <select id="booktype" name="type" style="padding: 5px 30px; " disabled>
+                    <% var data=[ "นวนิยาย" , "การ์ตูน" , "วิชาการ" ]; for ( var i=0; i < data.length; i++ ) { var
+                        selected=type ? "selected" : "" ; %>
+                        <option value="<%= data[i] %>" <%=selected %>><%=type %>
+                        </option>
+                        <% } %>
+                </select>
+                <br><br>
+                <div class="form-group">
+                    <a href="/books" class="btn btn-info">Back</a>
+                    <input type="submit" class="btn btn-info" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -8,5 +8,12 @@ const connection = mysql.createConnection(
         password: "*2K2va0o",
     }
 );
-connection.connect();
+connection.connect((error)=>{
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log('Database Connected..');
+    }
+});
 module.exports = connection;
