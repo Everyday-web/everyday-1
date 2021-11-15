@@ -1,0 +1,62 @@
+.head h1{
+    font-size: 60px;
+    margin: 48px 240px;
+}
+.head img{
+    position: absolute;
+    top: 480px;
+    left: 108px;
+    width: 120px;
+}
+
+.field1{
+    display: block;
+    border-radius: 16px;
+    border: 4px solid #008ecc;
+    margin-top: 1em;
+    padding: 24px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.label1{
+    font-size: 24px;
+}
+
+.field1 .btn{
+    padding: 12px;
+    font-size: 20px;
+    background-color: #008ecc;
+    border-radius: 16px;
+    font-family: 'Caveat Brush', cursive;
+}
+
+
+#name,#username,#tel,#email,#pass{
+    padding: 12px;
+    border-radius: 4px;
+}
+
+
+.input-group{
+    outline: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 18px;
+    font-family: inherit;
+}
+@media (max-width: 768px) {
+    .head h1{
+        font-size: 48px;
+        margin: 48px 140px;
+    }
+    .head img{
+        position: absolute;
+        top: 464px;
+        left: 64px;
+        width: 80px;
+    }
+  }

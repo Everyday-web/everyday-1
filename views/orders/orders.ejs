@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Status Order</title>
+    <style>
+        .btn {
+            border: solid 3px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+
+        <% if(data.length) { %>
+            <% for(let i=0;i<data.length;i++){ %>
+                <table style="margin:auto;border:solid black 5px;width:90%;border-radius: 1%;">
+                    <tr>
+
+                        <th colspan="4" style="text-align:left;padding:3px;">
+                            <h2>หมายเลขลูกค้า :<%= data[i].user_id %><br>
+                                    ชื่อลูกค้า :<%= data[i].user_cusname %>
+                            </h2>
+                        </th>
+                    </tr>
+                    <% if((data[i].order_details_id)==0) { %>
+                        <tr>
+                            <td colspan='7' style='text-align:center'>
+                                <h1>ไม่มีข้อมูล</h1>
+                            </td>
+                        </tr>
+                        <% } %>
+
+
+                </table>
+                <% } %>
+            <% } %>
+    </div>
+
+</body>
+
+</html>

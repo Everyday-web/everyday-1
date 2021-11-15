@@ -10,9 +10,5 @@ router.get('/login', function(req, res, next){
   res.render('login')
 })
 
-router.get('/page', function(req, res, next){
-  res.render('page')
-})
-
 
 module.exports = router;

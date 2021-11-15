@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var booksRouter = require('./routes/books');
+var ordersRouter = require('./routes/orders');
+var dashboardRouter = require('./routes/dashboard');
 
 var app = express();
 
@@ -24,6 +26,8 @@ app.use(express.static('uploads'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/books', booksRouter);
+app.use('/orders', ordersRouter);
+app.use('/dashboard', dashboardRouter);
 
 const adminrouter = require('./routes/admin');
 app.use('/api/admin', adminrouter);

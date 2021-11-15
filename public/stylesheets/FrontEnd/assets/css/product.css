@@ -1,0 +1,27 @@
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #232323;
+    justify-content: center;
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 24px;
+    font-family: 'Itim', cursive;
+    color: #fff;
+  }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #fff;
+    content: "|\00a0";
+  }
+  @media (max-width: 768px) {
+    ul.breadcrumb li {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 992px){
+    ul.breadcrumb li {
+      font-size: 18px;
+    }
+  }

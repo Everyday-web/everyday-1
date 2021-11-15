@@ -99,7 +99,7 @@
 			// console.log(responseObject);
 			
             if (responseObject.status == 200) {
-                location.href = '/page';
+                location.href = '/dashboard';
             } else {
 				document.getElementById("form-messages").style.display = "block";
 				document.getElementById("form-messages-error").textContent = responseObject.message;
