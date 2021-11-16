@@ -43,25 +43,25 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .products-heading {
-	background-image: url(../images/products-heading.jpg);
+	background-image: url(/images/fd_images/products-heading.jpg);
 }
 .cart-heading {
-	background-image: url(../images/cart-heading.jpg);
+	background-image: url(/images/fd_images/cart-heading.jpg);
 }
 .product-detail-heading {
-	background-image: url(../images/products-detail-heading.jpg);
+	background-image: url(/images/fd_images/products-detail-heading.jpg);
 }
 .checkout-heading {
-	background-image: url(../images/checkout-heading.jpg);
+	background-image: url(/images/fd_images/checkout-heading.jpg);
 }
 .profile-heading {
-	background-image: url(../images/profile-heading.jpg);
+	background-image: url(/images/fd_images/profile-heading.jpg);
 }
 .order-detail-heading {
-	background-image: url(../images/order-detail-heading.jpg);
+	background-image: url(/images/fd_images/order-detail-heading.jpg);
 }
 .status-heading {
-	background-image: url(../images/status-heading.jpg);
+	background-image: url(/images/fd_images/status-heading.jpg);
 }
 
 .page-heading {

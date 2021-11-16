@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Admin</title>
+		<style>
+		#form-messages {
+        	background-color: rgb(255, 232, 232);
+        	border: 1px solid red;
+        	color: red;
+        	display: none;
+        	font-size: 12px;
+        	font-weight: bold;
+        	margin-bottom: 10px;
+        	padding: 10px 25px;
+        	max-width: 250px;
+    	}
+		.form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.form input[type="password"],
+		.form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="form">
+			<h1>เข้าสู่ระบบจัดการแอดมิน Everyday</h1>
+			<ul id="form-messages">
+				<li id="form-messages-error"></li>
+				<!-- <li>username and password is wrong</li> -->
+			</ul>
+	
+			<input type="text" name="username" id="username" placeholder= "Username" required>
+			<input type="password" name="password" id="password"  placeholder="Password" required>
+			<input id="btn-submit" type="submit">
+			
+		</div>
+	</body>
+
+	<script>
+        const form = {
+            username: document.getElementById('username'),
+            password: document.getElementById('password'),
+            submit: document.getElementById('btn-submit'),
+            messages: document.getElementById('form-messages')
+        };
+		// console.log(form);
+        form.submit.addEventListener('click', () => {
+            const request = new XMLHttpRequest();
+
+            request.onload = () => {
+                let responseObject = null;
+
+                try {
+                    responseObject = JSON.parse(request.responseText);
+                } catch (e) {
+                    console.error('Could not parse JSON!');
+                }
+
+                if (responseObject) {
+                    handleResponse(responseObject);
+                }
+            };
+
+            const requestData = `username=${form.username.value}&password=${form.password.value}`;
+
+            request.open('post', '/api/admin/login');
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestData);
+			// console.log(requestData);
+        });
+
+        function handleResponse (responseObject) {
+			// console.log(responseObject);
+			
+            if (responseObject.status == 200) {
+                location.href = '/dashboard';
+            } else {
+				document.getElementById("form-messages").style.display = "block";
+				document.getElementById("form-messages-error").textContent = responseObject.message;
+            }
+        }
+    </script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</html>
