@@ -40,6 +40,5 @@ module.exports = {
                 message: "Your session is not valid!",
             });
         }
-        
     },
 }

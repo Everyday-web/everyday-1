@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var cookieParser = require('cookie-parser')
+var session = require('express-session')
 
 /* GET page. */
+router.post('/', function(req, res) {
+  console.log(req.body)
+})
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
@@ -42,8 +48,9 @@ router.get('/checkout', function(req, res, next) {
   res.render('checkout');
 });
 
-
 router.get('/login', function(req, res, next){
+  console.log(req.locals);
+  console.log(req.body)
   res.render('login')
 })
 
