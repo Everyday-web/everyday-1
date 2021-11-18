@@ -24,7 +24,8 @@
                     </div>
                     <div class="signin-form">
                         <h2 class="form-title">Log In</h2>
-                        <form method="POST" class="register-form" id="login-form">
+
+                        <form onsubmit="login()" id="loginform" name="loginform">
                             <div class="form-group">
                                 <input type="text" name="your_name" id="your_name" placeholder="Your Name" required/>
                             </div>
@@ -39,6 +40,7 @@
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log In"/>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -48,8 +50,45 @@
     <!-- JS -->
     <script src="/javascripts/fd_js/sign-jquery.min.js"></script>
     <script src="/javascripts/fd_js/sign-main.js"></script>
+    <script src="/javascripts/FetchFunction.js"></script>
 </body>
 <script>
-    
+    // FPost('http://localhost:3000/',{answer: 42})
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+
+    async function login(){
+        let fd = new FormData();
+
+        console.log("hello")
+        let username = document.getElementById('your_name').value;
+        // let password = document.getElementById('your_pass').value;
+
+        fd.append('username', username);
+        // fd.append('password', password);
+
+        // console.log(fd);
+        // console.log(Array.from(fd));
+        JSON.stringify(fd)
+
+        await senddata(fd)
+    }
+
+    function senddata(x) {
+        console.log(Array.from(x));
+        fetch('http://localhost:3000/',{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': "name",
+                'data': x
+            })
+        })
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
+    }
 </script>
-</html>
+</html>`
