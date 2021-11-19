@@ -90,9 +90,11 @@ router.get('/status', isLoggedin, getorders, function(req, res, next) {
   if(!req.cookies.token){
     return res.redirect('/login');
   }
+  console.log(req.orderlist)
   return res.render('status', {
     loginstate: 1,
-    usernamedata: req.userData
+    usernamedata: req.userData,
+    orderlistdata: req.orderlist
   });
 });
 
