@@ -74,7 +74,7 @@ function login(req, res) {
             if(bResult){
                 //password match
                 const token = jwt.sign({
-                    username: result[0]['user_username'],
+                    username: result[0]['user_cusname'],
                     userid: result[0]['user_id'],
 
                 }, 'SECRETKEY',{expiresIn: "7d" });

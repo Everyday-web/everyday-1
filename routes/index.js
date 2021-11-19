@@ -3,6 +3,8 @@ var router = express.Router();
 var cookieParser = require('cookie-parser')
 var session = require('express-session')
 const {isLoggedin} = require('../middleware/users')
+const {getprofile} = require('../controller/user/profile')
+const {getorders} = require('../controller/user/order')
 
 /* GET page. */
 router.post('/', function(req, res) {
@@ -34,14 +36,17 @@ router.get('/signup', function(req, res, next) {
   return res.render('signup');
 });
 
-router.get('/profile', isLoggedin, function(req, res, next) {
+router.get('/profile', isLoggedin, getprofile, function(req, res, next) {
   if(!req.cookies.token){
     return res.redirect('/login');
+  }else{
+    return res.render('profile', {
+      loginstate: 1,
+      usernamedata: req.userData,
+      userprofiledata: req.userProfile
+    });
   }
-  return res.render('profile', {
-    loginstate: 1,
-    usernamedata: req.userData
-  });
+  
 });
 
 router.get('/cart', isLoggedin ,function(req, res, next) {
@@ -81,7 +86,7 @@ router.get('/product-detail', isLoggedin, function(req, res, next) {
   }
 });
 
-router.get('/status', isLoggedin,function(req, res, next) {
+router.get('/status', isLoggedin, getorders, function(req, res, next) {
   if(!req.cookies.token){
     return res.redirect('/login');
   }
