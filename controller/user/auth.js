@@ -80,8 +80,10 @@ function login(req, res) {
                 }, 'SECRETKEY',{expiresIn: "7d" });
                 db.query(`UPDATE users SET last_login = now() WHERE user_id = '${result[0]['user_id']}'`);
                 // console.log(token)
-                res.cookie('token',token, { maxAge: 900000, httpOnly: true });
+
+                res.cookie('token',token, { maxAge: 604800000, httpOnly: true });
                 return res.redirect('/');
+
                 return res.status(200).send({
                     username: result[0]['user_username'],
                     message: 'Logged in!',
@@ -96,8 +98,7 @@ function login(req, res) {
         });
     });
 }
-
-
+  
 
 module.exports = {
     register,

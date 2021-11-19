@@ -50,14 +50,23 @@
             <li class="nav-item">
               <a class="nav-link" href="/products">Our Products</a>
             </li>
-            <li class="nav-item sub-menus active">
+
+            <% if(loginstate == 0){ %> 
               <a class="nav-link" href="/login">Log In</a>
+            <% } %>
+
+            <% if(loginstate == 1){ %>
+            <li class="nav-item sub-menus">
+              <a class="nav-link"> <%= usernamedata.username %>  </a>
               <ul>
-                <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
-                <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
-                <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+                  <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
+                  <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
+                  <li><a href="/logout"><i class="fa fa-sign-out"></i> Log out</a></li>
               </ul>
+
             </li>
+            <% } %>
+
             <li class="nav-item">
               <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
             </li>

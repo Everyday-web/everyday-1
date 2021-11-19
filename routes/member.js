@@ -21,6 +21,7 @@ router.post('/login', login)
 
 // http://localhost:3000/api/secret-route
 router.post('/secret-route', userMiddleware.isLoggedin, (req, res, next) => {
+    console.log(req.cookies);
     console.log(req.userData);
     res.send("This is secret content!");
 });    
