@@ -14,7 +14,17 @@ router.get('/', (req, res, next) => {
             res.render('books/books', { data: '' });
         }
         else {
-            res.render('books/books', { data: rows });
+            db.query(`SELECT user_username FROM users WHERE role = 'admin'`, (err, rows1) => {
+                if (err) {
+                    res.render('books/books', { data1: '' });
+                }
+                else {
+                    res.render('books/books', {
+                        data: rows,
+                        data1: rows1
+                    });
+                }
+            });
         }
     });
 });

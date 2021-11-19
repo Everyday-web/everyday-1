@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="container" style="margin-top: 50px;">
+
+
+    <div class="card">
+        <div class="card-header">
+            Edit Book
+        </div>
+        <div class="card-body">
+            <form action="/orders/update/<%= id %> " method="post" encType="multipart/form-data">
+                <div class="form-group">
+                    <label>Customer Name:</label>
+                    <input type="text" class="form-control" name="cusname" value="<%= cusname %>" autocomplete="off" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Book Name:</label>
+                    <input type="text" class="form-control" name="booksname" value="<%= bookname %>" autocomplete="off" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Total Price:</label>
+                    <input type="text" class="form-control" name="price" value="<%= totalprice %>" autocomplete="off" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Quantity:</label>
+                    <input type="number" class="form-control" name="quantity" value="<%= quantity %>"
+                        autocomplete="off" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Payment Image:</label><br>
+                    <img src="/<%= image %>" alt="Image" height="530px" width="330px" disabled>
+                </div>
+                <br><br>
+                <select id="type" name="status" style="padding: 5px 30px; ">
+                    <% var data=[ "กำลังจัดส่ง" , "จัดส่งสำเร็จแล้ว" , "ยกเลิก" ]; for ( var i=0; i < data.length; i++ ) { var
+                        selected=i ? "selected" : "" ; %>
+                        <option value="<%= data[i] %>" <%=selected %>><%=data[i] %>
+                        </option>
+                        <% } %>
+                </select>
+                <br><br>
+                <div class="form-group">
+                    <a href="/orders" class="btn btn-info">Back</a>
+                    <input type="submit" class="btn btn-info" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

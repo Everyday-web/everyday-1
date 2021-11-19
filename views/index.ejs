@@ -40,6 +40,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
@@ -50,14 +51,23 @@
               <li class="nav-item">
                 <a class="nav-link" href="/products">Our Products</a>
               </li>
-              <li class="nav-item sub-menus">
+
+              <% if(loginstate == 0){ %> 
                 <a class="nav-link" href="/login">Log In</a>
+              <% } %>
+
+              <% if(loginstate == 1){ %>
+              <li class="nav-item sub-menus">
+                <a class="nav-link"> <%= usernamedata.username %>  </a>
                 <ul>
                     <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
                     <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
-                    <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out"></i> Log out</a></li>
                 </ul>
+
               </li>
+              <% } %>
+              
               <li class="nav-item">
                 <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
               </li>
@@ -77,6 +87,7 @@
         <div class="banner-item-01">
           <div class="text-content">
             <h4>Best Offer</h4>
+
             <h2>New Arrivals On Sale</h2>
           </div>
         </div>
@@ -93,8 +104,11 @@
     <!--start card-->
     <div class="card-bestseller">
       <p><span>BEST</span> SELLER</p>
+    
+
     </div>
       <ul class="cards">
+        
           <li>
               <a href="#" class="card">
                   <img src="/images/fd_images/product_02.jpg" class="card__image">

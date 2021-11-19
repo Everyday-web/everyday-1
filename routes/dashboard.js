@@ -12,7 +12,44 @@ router.get('/', (req, res, next) => {
             res.render('page/dashboard', { name: '' });
         }
         else {
-            res.render('page/dashboard', { name: result[0].user_username });
+            db.query(`SELECT SUM(order_totalprice) as total FROM orders WHERE order_status = 4`, (err, result1) => {
+                if (err) {
+                    res.render('page/dashboard', { data: '' });
+                } else {
+                    db.query(`SELECT COUNT(order_id) as waiting FROM orders WHERE order_status = 1`, (err, result2) => {
+                        if (err) {
+                            res.render('page/dashboard', { name: '' });
+                        }
+                        else {
+                            db.query(`SELECT book_name FROM order_details JOIN book ON order_details.book_id = book.book_id ORDER BY book.book_id DESC LIMIT 0,3`, (err, result3) => {
+                                if (err) {
+                                    res.render('page/dashboard', { name: '' });
+                                }
+                                else {
+                                    db.query(`SELECT COUNT(order_id) as total FROM orders`, (err, result4) => {
+                                        if (err) {
+                                            res.render('page/dashboard', { name: '' });
+                                        }
+                                        else {
+                                            res.render('page/dashboard', {
+                                                name: result[0].user_username,
+                                                data: result1[0].total,
+                                                data1: result2[0].waiting,
+                                                data2: result3[0].book_name,
+                                                data3: result4[0].total
+                                            });
+                                        }
+                                    })
+
+                                }
+                            })
+
+                        }
+                    })
+
+                }
+
+            })
         }
     });
 });

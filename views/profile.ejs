@@ -47,14 +47,23 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/products">Our Products</a>
                 </li>
-                <li class="nav-item sub-menus active">
+
+                <% if(loginstate == 0){ %> 
                   <a class="nav-link" href="/login">Log In</a>
+                <% } %>
+  
+                <% if(loginstate == 1){ %>
+                <li class="nav-item sub-menus">
+                  <a class="nav-link"> <%= usernamedata.username %>  </a>
                   <ul>
                       <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
                       <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
-                      <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+                      <li><a href="/logout"><i class="fa fa-sign-out"></i> Log out</a></li>
                   </ul>
+  
                 </li>
+                <% } %>
+
                 <li class="nav-item">
                   <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
                 </li>
@@ -86,21 +95,23 @@
       </div>
 
       <fieldset class="field1">
-          <label for="name" class="label1">Name :</label><br>
-          <input class="input-group" type="text" id="name" name="name"><br>
-          <label for="name" class="label1">Username :</label><br>
-          <input class="input-group" type="text" id="username" name="name"><br>
-          <label for="name" class="label1">Tel :</label><br>
-          <input class="input-group" type="Tel" id="tel" name="name"><br>
-          <label for="mail" class="label1">Email :</label><br>
-          <input class="input-group" type="text" id="email" name="mail"><br>
-          <label for="pass" class="label1">Password :</label><br>
-          <input class="input-group" type="text" id="pass" name="pass"><br>
-          <!-- <label for="pass" class="label1">Enter your password to change :</label><br>
-          <input class="input-group" type="text" id="pass" name="pass" required><br> -->
-          <input class="btn" type="submit" value="SAVE">
+          <form action="/api/user/profile/edit" method="POST">
+            <label class="label1">Name :</label><br>
+            <input class="input-group" type="text" id="name" name="name" value="<%= userprofiledata['user_cusname'] %>"><br>
+            <label class="label1">Username :</label><br>
+            <input class="input-group" type="text" id="username" name="username" disabled value="<%= userprofiledata['user_username'] %>"><br>
+            <label class="label1">Tel :</label><br>
+            <input class="input-group" type="Tel" id="tel" name="tel" value="<%= userprofiledata['user_tel'] %>"><br>
+            <label for="mail" class="label1">Email :</label><br>
+            <input class="input-group" type="text" id="email" name="mail" disabled value="<%= userprofiledata['user_email'] %>" ><br>
+            <!-- <label for="pass" class="label1">Password :</label><br>
+            <input class="input-group" type="text" disabled id="pass" name="pass"><br> -->
+            <!-- <label for="pass" class="label1">Enter your password to change :</label><br>
+            <input class="input-group" type="text" id="pass" name="pass" required><br> -->
+            <input class="btn" type="submit" value="SAVE">
+          </form>
       </fieldset>
-      
+
       <footer>
         <div class="container">
           <div class="row">

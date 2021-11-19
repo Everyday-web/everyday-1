@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Order</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="container" style="margin-top: 50px;">
+
+
+    <div class="card">
+        <div class="card-header">
+            View Order
+        </div>
+        <div class="card-body">
+            <form action="/orders/confirm/<%= id %> " method="post" encType="multipart/form-data">
+                <div class="form-group">
+                    <label>Customer Name:</label>
+                    <input type="text" class="form-control" name="cusname" value="<%= cusname %>" autocomplete="off"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label>Book Name:</label>
+                    <input type="text" class="form-control" name="bookname" value="<%= bookname %>" autocomplete="off"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label>Total:</label>
+                    <input type="text" class="form-control" name="totalprice" value="<%= totalprice %>"
+                        autocomplete="off" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Quantity:</label>
+                    <input type="number" class="form-control" name="qty" value="<%= qty %>" autocomplete="off" disabled>
+                </div>
+
+                <label>Payment Image:</label><br><br>
+                <img src="/<%= image %>" alt="Image" height="550px" width="320px">
+                <br><br>
+                <div class="form-group">
+                    <label>Payment Status:</label>
+                    <input type="text" class="form-control" name="paymentstatus" value="<%= status %>" autocomplete="off" disabled>
+                </div>
+                <div class="form-group">
+                    <a href="/orders" class="btn btn-info">Back</a>
+                    <input type="submit" class="btn btn-info" style="background-color: rgb(0, 175, 93); border-color: rgb(0, 175, 93);" value="Confirm Payment Status">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
