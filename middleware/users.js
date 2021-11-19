@@ -9,13 +9,13 @@ module.exports = {
             });
         }
         // password min length 8
-        if(!req.body.password || req.body.username.length < 8){
+        if(!req.body.pass || req.body.pass.length < 8){
             return res.status(400).send({
                 message: "Please enter a password with min. 8 chars",
             });
         }
         // password (repeat) must macth
-        if(!req.body.password_repeat || req.body.password != req.body.password_repeat){
+        if(!req.body.pass || req.body.pass != req.body.re_pass){
             return res.status(400).send({
                 message: "Both passwords must match",
             });
@@ -35,7 +35,7 @@ module.exports = {
             req.userData = decoded;
             next();
         } catch(err){
-            throw err;
+            // throw err;
             return res.status(400).send({
                 message: "Your session is not valid!",
             });
