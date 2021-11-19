@@ -136,6 +136,7 @@ router.get('/orders', userMiddleware.isLoggedin, getorders)
 // })
 
 
+
 //update orders
 router.post('/update/(:id)', (req, res, next) => {
     let id = req.params.id;
@@ -202,6 +203,7 @@ router.get('/delete/(:id)', (req, res, next) => {
         }
     })
 })
+
 
 router.get('/history', (req, res, next) => {
     db.query('SELECT * FROM order_details JOIN book ON order_details.book_id = book.book_id JOIN orders ON order_details.order_id = orders.order_id JOIN payment ON order_details.payment_id = payment.payment_id JOIN users ON orders.user_id = users.user_id  WHERE order_status IN (4,5) ORDER by order_details_id ASC', (err, rows) => {
