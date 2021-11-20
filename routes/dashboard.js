@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const db = require("../db/db.js");
+const { checkadmin } = require('../middleware/admin.js');
+const { isLoggedin } = require('../middleware/users.js');
 
 
 
 //display dashboard page
-router.get('/', (req, res, next) => {
+router.get('/', isLoggedin, checkadmin, (req, res, next) => {
     db.query(`SELECT user_username FROM users WHERE role = 'admin'`, (err, result) => {
         // return console.log(result);
         if (err) {

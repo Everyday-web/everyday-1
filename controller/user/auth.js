@@ -49,7 +49,7 @@ function login(req, res) {
             message: "username and password not found!"
         });
     }
-    db.query(`SELECT * FROM users WHERE user_username = ${db.escape(req.body.username)} AND role = 'member';`,(err, result) => {
+    db.query(`SELECT * FROM users WHERE user_username = ${db.escape(req.body.username)};`,(err, result) => {
         if(err){
             // throw err;
             return res.status(400).send({

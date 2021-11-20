@@ -8,6 +8,7 @@ const { getorders } = require('../controller/user/order');
 const { decodeBase64 } = require('bcryptjs');
 const db = require("../db/db.js");
 const fileUpload = require('express-fileupload');
+const { checkadmin } = require('../middleware/admin');
 router.use(fileUpload());
 router.use(express.static('uploads'));
 
@@ -49,8 +50,11 @@ router.get('/', isLoggedin, function (req, res, next) {
 
 });
 
-router.get('/admin', function (req, res, next) {
-  res.render('admin');
+router.get('/admin', isLoggedin, checkadmin ,function (req, res, next) {
+  // res.render('admin');
+  // return res.render('/dashboard');
+  // return location.href = '/dashboard';
+  return res.redirect('/dashboard');
 });
 
 router.get('/signup', function (req, res, next) {

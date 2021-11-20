@@ -49,7 +49,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 	</head>
 	<body>
-		<div class="form">
+		<div class="form" id="loginadmin">
 			<h1>เข้าสู่ระบบจัดการแอดมิน Everyday</h1>
 			<ul id="form-messages">
 				<li id="form-messages-error"></li>
@@ -58,55 +58,76 @@
 	
 			<input type="text" name="username" id="username" placeholder= "Username" required>
 			<input type="password" name="password" id="password"  placeholder="Password" required>
-			<input id="btn-submit" type="submit">
+			<input id="btn-submit" onclick="login()" type="submit">
 			
 		</div>
 	</body>
 
 	<script>
+		var xhr = new XMLHttpRequest();
 
         const form = {
             username: document.getElementById('username'),
             password: document.getElementById('password'),
-            submit: document.getElementById('btn-submit'),
-            messages: document.getElementById('form-messages')
         };
 		// console.log(form);
-        form.submit.addEventListener('click', () => {
-            const request = new XMLHttpRequest();
 
-            request.onload = () => {
-                let responseObject = null;
+        // form.submit.addEventListener('click', () => {
+        //     const request = new XMLHttpRequest();
 
-                try {
-                    responseObject = JSON.parse(request.responseText);
-                } catch (e) {
-                    console.error('Could not parse JSON!');
-                }
+        //     request.onload = () => {
+        //         let responseObject = null;
 
-                if (responseObject) {
-                    handleResponse(responseObject);
-                }
-            };
+        //         try {
+        //             responseObject = JSON.parse(request.responseText);
+        //         } catch (e) {
+        //             console.error('Could not parse JSON!');
+        //         }
 
-            const requestData = `username=${form.username.value}&password=${form.password.value}`;
+        //         if (responseObject) {
+        //             handleResponse(responseObject);
+        //         }
+        //     };
 
-            request.open('post', '/api/admin/login');
-            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            request.send(requestData);
-			console.log(responseObject);
-        });
+        //     const requestData = `username=${form.username.value}&password=${form.password.value}`;
 
-        function handleResponse (responseObject) {
-			// console.log(responseObject);
+        //     request.open('post', '/api/admin/login');
+        //     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        //     request.send(requestData);
+		// 	console.log(responseObject);
+        // });
+
+        // function handleResponse (responseObject) {
+		// 	// console.log(responseObject);
 			
-            if (responseObject.status == 200) {
-                location.href = '/dashboard';
-            } else {
-				document.getElementById("form-messages").style.display = "block";
-				document.getElementById("form-messages-error").textContent = responseObject.message;
-            }
-        }
+        //     if (responseObject.status == 200) {
+        //         location.href = '/dashboard';
+        //     } else {
+		// 		document.getElementById("form-messages").style.display = "block";
+		// 		document.getElementById("form-messages-error").textContent = responseObject.message;
+        //     }
+        // }
+
+		const adminform = document.getElementById('loginadmin')
+
+		function login() {
+  		  xhr.open("POST", '/api/admin/login', true);
+  		  xhr.setRequestHeader('Content-Type', 'application/json');
+  		  xhr.send(JSON.stringify({
+			data: form,
+  		    type: "remove"
+  		  }));
+		
+  		  xhr.onreadystatechange = function () {
+  		    if (this.readyState != 4) return;
+
+  		    if (this.status == 200) {
+  		        var data = JSON.parse(this.responseText);
+  		        console.log(data);
+			
+  		    }
+  		  };
+  		}
     </script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
