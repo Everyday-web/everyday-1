@@ -13,7 +13,7 @@ router.get('/', (req,res)=>{
 
 // http://localhost:3000/api/login
 router.post('/login', (req,res) =>{
-    return console.log(req.body);
+    // return console.log(req.body);
      // {
     //     username: 'test',
     //     password: '1234567890',

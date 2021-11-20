@@ -9,6 +9,7 @@ const {addcart, removecart, addcartcount} = require('../controller/user/cart')
 
 const db = require("../db/db.js");
 const { isLoggedin, validateRegister } = require('../middleware/users.js');
+const { checkout } = require('../controller/user/checkout');
 
 // router.get('/', (req, res)=>{
 //     console.log("this member router");
@@ -36,5 +37,6 @@ router.post('/addcart', isLoggedin, addcart)
 //post book_id : ?
 router.post('/removecart', isLoggedin, removecart)
 router.post('/cartcount', isLoggedin, addcartcount)
+router.post('/checkout', isLoggedin, checkout)
 
 module.exports = router;
