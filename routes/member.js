@@ -28,6 +28,14 @@ router.post('/secret-route', userMiddleware.isLoggedin, (req, res, next) => {
     console.log(req.cookies);
     console.log(req.userData);
     res.send("This is secret content!");
-});    
+});
+
+router.post('/addcart', (req, res)=>{
+    console.log(req.body)
+    return res.send({
+        status: 200,
+        message: "addcart success"
+    })
+})
 
 module.exports = router;
