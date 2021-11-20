@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const {v4: uuidv4} = require('uuid');
 const {register, login} = require('../controller/user/auth')
 const {editprofile} = require('../controller/user/profile')
-const {addcart} = require('../controller/user/cart')
+const {addcart, removecart} = require('../controller/user/cart')
 
 const db = require("../db/db.js");
 const { isLoggedin, validateRegister } = require('../middleware/users.js');
@@ -32,5 +32,8 @@ router.post('/secret-route', isLoggedin, (req, res, next) => {
 });
 
 router.post('/addcart', isLoggedin, addcart)
+
+//post book_id : ?
+router.post('/removecart', isLoggedin, removecart)
 
 module.exports = router;

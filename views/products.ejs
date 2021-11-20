@@ -125,7 +125,7 @@
                         <p>
                           <%= data[i].book_details %>
                         </p>
-                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                        <a onclick="addcart(<%= data[i].book_id %>)"><i class="fa fa-cart-plus"></i></a>
                       </div>
                     </div>
 
@@ -176,5 +176,27 @@
 
 
       </body>
+
+      <script>
+        var xhr = new XMLHttpRequest();
+      
+        function addcart(x) {
+          xhr.open("POST", '/api/user/addcart', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({
+            book_id: x
+          }));
+      
+          xhr.onreadystatechange = function () {
+            if (this.readyState != 4) return;
+      
+            if (this.status == 200) {
+                var data = JSON.parse(this.responseText);
+                console.log(data);
+                
+            }
+          };
+        }
+      </script>
 
 </html >
