@@ -43,14 +43,25 @@ function addcartcount(req, res) {
     }
 
     if(req.body.type === "add"){
-        db.query(`UPDATE cart SET cart_qty = cart_qty + 1 WHERE user_id = ${req.userData.userid} AND book_id = ${req.body.book_id} AND cart_status = 1`,(updateerr, updatere) =>{
-            if(updateerr) throw updateerr
-            return res.send({
-                status: 200,
-                message: "เพิ่มสินค้าลงตะกร้าสำเร็จ"
-            })
+        db.query(`SELECT * FROM cart WHERE user_id = ${req.userData.userid} AND book_id = ${req.body.book_id} AND cart_status = 1`, (selerr, selre)=>{
+            if(selerr) throw selerr
+            if(selre === undefined || selre.length == 0){
+                return res.status(400).send({
+                    status: 400,
+                    message: "Error Methods"
+                })
+            }else{
+                db.query(`UPDATE cart SET cart_qty = cart_qty + 1 WHERE user_id = ${req.userData.userid} AND book_id = ${req.body.book_id} AND cart_status = 1`,(updateerr, updatere) =>{
+                    if(updateerr) throw updateerr
+                    return res.send({
+                        status: 200,
+                        message: "เพิ่มสินค้าลงตะกร้าสำเร็จ"
+                    })
+                })
+            }
         })
     }
+    
     if(req.body.type === "remove"){
         db.query(`SELECT * FROM cart WHERE user_id = ${req.userData.userid} AND book_id = ${req.body.book_id} AND cart_status = 1`,(selcarterr, selcartre)=>{
             if(selcartre[0]['cart_qty'] < 1){
