@@ -35,6 +35,7 @@ function addcart(req, res) {
     })
 }
 function addcartcount(req, res) {
+    // return console.log(req.body);
     if(!req.body.type || !req.body.book_id){
         return res.status(400).send({
             status: 400,
