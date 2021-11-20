@@ -102,7 +102,7 @@
             
              
             <div class="product-header">
-              <a class="remove">
+              <a class="remove" onclick="addcart(<%= data[i].book_id %>)">
                 <img src="/<%= data[i].book_image %>" alt="">
 
                 <h3>Remove product</h3>
@@ -116,9 +116,9 @@
             </div>
 
             <footer class="content">
-              <span class="qt-minus">-</span>
+              <span class="qt-minus" onclick="delcount(<%= data[i].book_id %>)">-</span>
               <span class="qt">1</span>
-              <span class="qt-plus">+</span>
+              <span class="qt-plus" onclick="addcartcount(<%= data[i].book_id %>)">+</span>
 
               <h2 class="full-price">
                 <%= data[i].book_price %>฿
@@ -152,7 +152,7 @@
       </div>
 
       <div class="right">
-        <h1 class="total">Total: <span><%= data[i].book_price + data[i++].book_price +50%></span>฿</h1>
+        <h1 class="total">Total: <span>50000</span>฿</h1>
         <a class="btn" href="/checkout">Checkout</a>
       </div>
       <% } %> 
@@ -185,4 +185,63 @@
 
 </body>
 
+<script>
+  var xhr = new XMLHttpRequest();
+
+  function addcart(x) {
+    xhr.open("POST", '/api/user/removecart', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      book_id: x
+    }));
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+
+      if (this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+          
+      }
+    };
+  }
+
+  function addcartcount(x) {
+    xhr.open("POST", '/api/user/cartcount', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      book_id: x,
+      type: "add"
+    }));
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+
+      if (this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+          
+      }
+    };
+  }
+  function delcount(x) {
+    xhr.open("POST", '/api/user/cartcount', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      book_id: x,
+      type: "remove"
+    }));
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+
+      if (this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+          
+      }
+    };
+  }
+
+</script>
 </html>

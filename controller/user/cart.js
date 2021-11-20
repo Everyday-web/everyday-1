@@ -35,6 +35,7 @@ function addcart(req, res) {
     })
 }
 function addcartcount(req, res) {
+    // return console.log(req.body);
     if(!req.body.type || !req.body.book_id){
         return res.status(400).send({
             status: 400,
@@ -61,7 +62,7 @@ function addcartcount(req, res) {
             }
         })
     }
-    
+
     if(req.body.type === "remove"){
         db.query(`SELECT * FROM cart WHERE user_id = ${req.userData.userid} AND book_id = ${req.body.book_id} AND cart_status = 1`,(selcarterr, selcartre)=>{
             if(selcartre[0]['cart_qty'] < 1){
@@ -98,7 +99,7 @@ function removecart(req, res) {
                 message: "ไม่พบสินค้า"
             })
         }
-        db.query(`DELETE FROM cart WHERE user_id = ${req.userData.userid}, book_id = ${req.body.book_id} AND cart_status = 1 `,(inserr, insre) =>{
+        db.query(`DELETE FROM cart WHERE user_id = ${req.userData.userid} AND book_id = ${req.body.book_id} AND cart_status = 1 `,(inserr, insre) =>{
             if(inserr) throw inserr
             return res.send({
                 status: 200,
