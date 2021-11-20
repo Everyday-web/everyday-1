@@ -2,8 +2,8 @@ var db = require('../../db/db')
 
 function checkout(req, res, next) {
     
-    console.log(req.files)
-    return console.log(req.body)
+    // console.log(req.files)
+    // return console.log(req.body)
     db.query(`SELECT * FROM cart a INNER JOIN book b ON a.book_id = b.book_id WHERE a.cart_status = 1 AND a.user_id = ${req.userData.userid}`,(selerr, selcart) =>{
        if(selerr) throw selerr
        console.log(selcart)
@@ -15,8 +15,15 @@ function checkout(req, res, next) {
                         if(detailerr) throw detailerr
                         console.log(detailresults);
                     })
+                    db.query(`UPDATE cart SET cart_status = 2 WHERE cart_id = ${selcart[i]['cart_id']}`,(updatecarterr, updatecartresults) =>{
+                        if(updatecarterr) throw updatecarterr
+                        console.log(updatecartresults);
+                    })
                 }
             }
+            res.status(200).send({
+                status: 200,
+            })
         })
     })
 }
