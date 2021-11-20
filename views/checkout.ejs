@@ -112,17 +112,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <fieldset class="field1">
+            
+            <fieldset class="field1"> 
+              <% if(data.length) {%>
               <legend class="legend">ยืนยันคำสั่งซื้อ</legend>
-              <label for="fname" class="font1"> ชื่อ-สกุล: </label><br>
-              <input type="text" id="fname" name="fname" placeholder="กรอกชื่อ-สกุล"><br>
+              <label for="cusname" class="font1"> ชื่อ-สกุล: </label><br>
+              <input type="text" id="fname" name="cusname" value="<%= data[0].user_cusname %>" disabled><br>
               <label for="email" class="font1"> Email: </label><br>
-              <input type="email"id="email" name="email"><br>
+              <input type="email"id="email" name="email" value="<%= data[0].user_email %>" disabled><br>
               <label for="phone" class="font1" > โทรศัพท์: </label><br>
-              <input type="tel" id="phone" name="phone" placeholder="+66"><br>
+              <input type="tel" id="phone" name="phone" placeholder="+66" value="<%= data[0].user_tel %>" disabled><br>
               <label for="address" class="font1"> ที่อยู่: </label><br>
-              <input type="text" id="address" name="address"><br>
-            </fieldset>
+              <input type="text" id="address" name="address" value="<%= data[0].user_address %>" disabled><br>
+            <% } %> 
+          </fieldset>
+            
             <a href="/cart"><button class="return">BACK</button></a>
           <a href="/"><input type="submit" value="ACCEPT" class="submit"></a>
           </div>

@@ -74,13 +74,19 @@ router.get('/profile', isLoggedin, getprofile, function (req, res, next) {
 });
 
 router.get('/cart', isLoggedin, function (req, res, next) {
-  if (!req.cookies.token) {
-    return res.redirect('/login');
-  }
-  return res.render('cart', {
-    loginstate: 1,
-    usernamedata: req.userData
-  });
+  let id = req.userData.userid;
+  db.query(`SELECT * FROM cart JOIN book ON cart.book_id = book.book_id JOIN users ON cart.user_id = users.user_id WHERE users.user_id = ` + id, (err, result) => {
+    // return console.log(result)
+    if (!req.cookies.token) {
+      return res.redirect('/login');
+    }
+    return res.render('cart', {
+      loginstate: 1,
+      usernamedata: req.userData,
+      data: result
+    });
+  })
+
 });
 
 router.get('/products', isLoggedin, function (req, res, next) {
@@ -153,13 +159,20 @@ router.get('/order-detail', isLoggedin, function (req, res, next) {
 });
 
 router.get('/checkout', isLoggedin, function (req, res, next) {
-  if (!req.cookies.token) {
-    return res.redirect('/login');
-  }
-  return res.render('checkout', {
-    loginstate: 1,
-    usernamedata: req.userData
-  });
+  // return console.log(req.userData.userid)
+  let id = req.userData.userid;
+  db.query(`SELECT * FROM cart JOIN book ON cart.book_id = book.book_id JOIN users ON cart.user_id = users.user_id WHERE users.user_id = ` + id, (err, result) => {
+    // return console.log(result)
+    if (!req.cookies.token) {
+      return res.redirect('/login');
+    }
+    return res.render('checkout', {
+      loginstate: 1,
+      usernamedata: req.userData,
+      data: result
+    });
+  })
+
 });
 
 router.get('/login', function (req, res, next) {
@@ -188,4 +201,4 @@ router.get('/search', function (req, res) {
       res.end(JSON.stringify(data));
     });
 })
-  module.exports = router;
+module.exports = router;
