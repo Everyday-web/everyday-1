@@ -48,25 +48,27 @@
             <li class="nav-item active">
               <a class="nav-link" href="/products">Our Products</a>
             </li>
-            <% if(loginstate == 0){ %> 
+            <% if(loginstate==0){ %>
               <a class="nav-link" href="/login">Log In</a>
-            <% } %>
+              <% } %>
 
-            <% if(loginstate == 1){ %>
-            <li class="nav-item sub-menus">
-              <a class="nav-link"> <%= usernamedata.username %>  </a>
-              <ul>
-                  <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
-                  <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
-                  <li><a href="/logout"><i class="fa fa-sign-out"></i> Log out</a></li>
-              </ul>
+                <% if(loginstate==1){ %>
+                  <li class="nav-item sub-menus">
+                    <a class="nav-link">
+                      <%= usernamedata.username %>
+                    </a>
+                    <ul>
+                      <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
+                      <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
+                      <li><a href="/logout"><i class="fa fa-sign-out"></i> Log out</a></li>
+                    </ul>
 
-            </li>
-            <% } %>
-            <li class="nav-item">
-              <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
-            </li>
-            <!-- <li class="nav-item">
+                  </li>
+                  <% } %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                    <!-- <li class="nav-item">
                   <a class="nav-link" href="#">Status</a>
                 </li> -->
           </ul>
@@ -90,51 +92,49 @@
   <!-- End Page Content -->
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <div class="product-detail-img">
-          <img src="/images/fd_images/product_01.jpg">
+      <% if(data.length) { %>
+        <div class="col-md-4">
+          <div class="product-detail-img">
+            <img src="/<%= data[0].book_image %>">
+          </div>
         </div>
-      </div>
-      <div class="col-md-8">
-        <div class="product-detail">
-          <table>
-            <tr>
-              <th>
-                ชื่อ :
-              </th>
-              <td>
-                Witchoar (วิชชอร์) เล่ม 1 : หยดน้ำแห่งกัลดราบก
-              </td>
-            </tr>
-            <tr>
-              <th>
-                ราคา :
-              </th>
-              <td>
-                210 ฿
-              </td>
-            </tr>
-            <tr>
-              <th>
-                รายละเอียด :
-              </th>
-              <td>
-                เจย์ สก็อต ตื่นมาพร้อมกับความทรงจำที่ว่างเปล่า เขาไม่รู้อะไรเลยเกี่ยวกับตัวเอง ทั้งเรื่องในอดีตและ
-                สิ่งที่ต้องทำต่อไปในอนาคต โดยเฉพาะทำไมเขาถึงมีพลังที่น่าจะเป็น ‘เวทมนตร์’ ชายหนุ่มอาศัยข้อความในสมุด
-                บันทึกทบทวนตัวตนในอดีต และกระดาษเตือนความจำที่จดไว้ทำให้เขาต้องเดินทางไปเริ่มชีวิตใหม่ที่เมืองวิชชอร์
-                เป็นพนักงานในร้านน้ำชาชื่อ วิทาเรียทีรูม
-                แต่ชีวิตใหม่ที่น่าจะเรียบง่าย กลับไม่สงบอย่างที่คิด ไม่นับกลุ่มคนลึกลับที่ตามล่าเขา ก็ยังมี โซอี้ หญิง
-                สาวผู้ดื้อดึงจะเป็นพนักงานร้านน้ำชา และร้านน้ำชาที่ไม่ใช่ร้านธรรมดา เพราะมันเป็นร้านน้ำชาของพ่อมด!
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <button class="button">ADD TO CART</button>
-              </td>
-            </tr>
-          </table>
+        <div class="col-md-8">
+          <div class="product-detail">
+            <table>
+              <tr>
+                <th>
+                  ชื่อ :
+                </th>
+                <td>
+                  <%= data[0].book_name %>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  ราคา :
+                </th>
+                <td>
+                  <%= data[0].book_price %> ฿
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  รายละเอียด :
+                </th>
+                <td>
+                  <%= data[0].book_details %>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <br><br>
+                  <button class="button">ADD TO CART</button>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
-      </div>
+        <% } %>
     </div>
   </div>
   <footer>

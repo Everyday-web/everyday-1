@@ -27,7 +27,7 @@ function editprofile(req, res) {
                 message: "ไม่พบข้อมูล"
             })
         }
-        db.query(`UPDATE users SET user_cusname = '${req.body.name}', user_tel = '${req.body.tel} WHERE user_id = ${req.userData.userid}'`,(updateerr, updateresults) =>{
+        db.query(`UPDATE users SET user_cusname = '${req.body.name}', user_tel = '${req.body.tel}' WHERE user_id = ${req.userData.userid}`,(updateerr, updateresults) =>{
             if(updateerr) throw updateerr
             return res.redirect('/profile');
         })

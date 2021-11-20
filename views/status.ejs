@@ -97,29 +97,37 @@
     <div class="search_btn"><i class="fa fa-search"></i></div>
     <input type="text" class="input_search" placeholder="Search">
   </div>
+  <br>
   <!-- end serach -->
-
+  <% if(data.length) { %>
   <table class="center">
     <tr>
       <th>รหัสคำสั่งซื้อ</th>
       <th>ผู้สั่งสินค้า</th>
-      <th>วันที่ซื้อ</th>
-      <th>วันที่ส่ง</th>
-      <th>ราคา</th>
+      <th>วัน/เวลาที่ซื้อ</th>
+      <th>วัน/เวลาที่ส่ง</th>
+      <th>ราคารวม</th>
+      <th>จำนวน</th>
       <th>สถานะสินค้า</th>
       <th>รายการสินค้า</th>
     </tr>
+    <% for(let i=0; i < data.length; i++) { %>
     <tr>
-      <td>1</td>
-      <td>red</td>
-      <td>10/11/21</td>
-      <td>10/11/21</td>
-      <td>470</td>
-      <td>จัดส่งสินค้าของเรียบร้อย</td>
+      <td><%= data[i].order_details_id %> </td>
+      <td><%= data[i].user_cusname %></td>
+      <td><%= data[i].order_datestartsend %></td>
+      <td><%= data[i].order_dateendsend %></td>
+      <td><%= data[i].order_totalprice %></td>
+      <td><%= data[i].order_details_qty %></td>
+      <td><%= data[i].order_status %></td>
       <td><a href="/order-detail">รายละเอียด</a></td>
     </tr>
+    <% } %>
   </table>
-
+  <% } %>
+  <% if(!data.length) { %>
+    <p class="text-center"><br><br>No order found!</p>
+    <% } %>
   <footer>
     <div class="container">
       <div class="row">

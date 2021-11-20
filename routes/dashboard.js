@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
                             res.render('page/dashboard', { name: '' });
                         }
                         else {
-                            db.query(`SELECT book_name FROM order_details JOIN book ON order_details.book_id = book.book_id ORDER BY book.book_id DESC LIMIT 0,3`, (err, result3) => {
+                            db.query(`SELECT SUM(order_details.order_details_qty) as qty_total, book.book_name FROM order_details JOIN book ON order_details.book_id = book.book_id GROUP BY book.book_id  ORDER BY qty_total  DESC LIMIT 0,3`, (err, result3) => {
                                 if (err) {
                                     res.render('page/dashboard', { name: '' });
                                 }

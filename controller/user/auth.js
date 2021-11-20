@@ -21,7 +21,7 @@ function register(req, res) {
                         message: "ผิดพลาด",
                     });
                 } else{
-                    db.query(`INSERT INTO users (user_uuid, user_username, user_password, user_email, user_tel, user_cusname) VALUES ('${uuidv4()}', ${db.escape(req.body.username)}, '${hash}', '${req.body.email}', '${req.body.tel}', '${req.body.name}')`,(err, result) => {
+                    db.query(`INSERT INTO users (user_uuid, user_username, user_password, user_email , user_address, user_tel, user_cusname) VALUES ('${uuidv4()}', ${db.escape(req.body.username)}, '${hash}', '${req.body.email}', '${req.body.address}' , '${req.body.tel}', '${req.body.name}')`,(err, result) => {
                         if(err) throw err
                         return res.redirect('/login');
                         return res.status(201).send({
