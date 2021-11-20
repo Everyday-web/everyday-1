@@ -102,7 +102,7 @@
             
              
             <div class="product-header">
-              <a class="remove">
+              <a class="remove" onclick="addcart(<%= data[i].book_id %>)">
                 <img src="/<%= data[i].book_image %>" alt="">
 
                 <h3>Remove product</h3>
@@ -185,4 +185,26 @@
 
 </body>
 
+<script>
+  var xhr = new XMLHttpRequest();
+
+  function addcart(x) {
+    xhr.open("POST", '/api/user/removecart', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      book_id: x
+    }));
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+
+      if (this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+          
+      }
+    };
+  }
+
+</script>
 </html>
