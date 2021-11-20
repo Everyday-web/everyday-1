@@ -202,16 +202,15 @@
   var xhr = new XMLHttpRequest();
 
   function addcart(x) {
-    console.log(x);
     xhr.open("POST", '/api/user/addcart', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
-      value: x
+      book_id: x
     }));
 
     xhr.onreadystatechange = function () {
       if (this.readyState != 4) return;
-      
+
       if (this.status == 200) {
           var data = JSON.parse(this.responseText);
           console.log(data);

@@ -5,9 +5,10 @@ const jwt = require('jsonwebtoken');
 const {v4: uuidv4} = require('uuid');
 const {register, login} = require('../controller/user/auth')
 const {editprofile} = require('../controller/user/profile')
+const {addcart} = require('../controller/user/cart')
 
 const db = require("../db/db.js");
-const userMiddleware = require("../middleware/users.js");
+const { isLoggedin, validateRegister } = require('../middleware/users.js');
 
 // router.get('/', (req, res)=>{
 //     console.log("this member router");
@@ -15,27 +16,21 @@ const userMiddleware = require("../middleware/users.js");
 
 
 // http://localhost:3000/api/user/sign-up
-router.post('/sign-up', userMiddleware.validateRegister, register)
+router.post('/sign-up', validateRegister, register)
 
 // http://localhost:3000/api/login
 router.post('/login', login)
 
 
-router.post('/profile/edit', userMiddleware.isLoggedin, editprofile)
+router.post('/profile/edit', isLoggedin, editprofile)
 
 // http://localhost:3000/api/secret-route
-router.post('/secret-route', userMiddleware.isLoggedin, (req, res, next) => {
+router.post('/secret-route', isLoggedin, (req, res, next) => {
     console.log(req.cookies);
     console.log(req.userData);
     res.send("This is secret content!");
 });
 
-router.post('/addcart', (req, res)=>{
-    console.log(req.body)
-    return res.send({
-        status: 200,
-        message: "addcart success"
-    })
-})
+router.post('/addcart', isLoggedin, addcart)
 
 module.exports = router;
