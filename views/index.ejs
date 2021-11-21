@@ -153,10 +153,16 @@
                 <a href="/product-detail/<%= data1[i].book_id %>"><img src="/<%= data1[i].book_image %>" alt=""></a>
                 <div class="down-content">
                   <a href="/product-detail/<%= data1[i].book_id %>">
-                    <h4><%= data1[i].book_name %></h4>
-                    <p><%= data1[i].book_price%> บาท</p>
+                    <h4>
+                      <%= data1[i].book_name %>
+                    </h4>
+                    <p>
+                      <%= data1[i].book_price%> บาท
+                    </p>
                   </a>
-                  <p><%= data1[i].book_details %></p>
+                  <p>
+                    <%= data1[i].book_details %>
+                  </p>
                   <a onclick="addcart(<%= data1[i].book_id %>)"><i class="fa fa-cart-plus"></i></a>
                 </div>
               </div>
@@ -169,8 +175,8 @@
   </div>
 
   <div class="select">
-		
-	</div>
+
+  </div>
 
 
   <footer>
@@ -212,12 +218,19 @@
       if (this.readyState != 4) return;
 
       if (this.status == 200) {
-          var data = JSON.parse(this.responseText);
-          console.log(data);
-          
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+        Swal.fire({
+          icon: 'success',
+          title: 'เพิ่มสินค้าลงตะกร้าสำเร็จ!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
       }
     };
   }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 </html>

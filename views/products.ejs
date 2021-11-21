@@ -162,7 +162,7 @@
   </footer>
 
 
-  
+
   <!-- Bootstrap core JavaScript -->
   <script src="/javascripts/fd_js/jquery.min.js"></script>
   <script src="/javascripts/fd_js/bootstrap.bundle.min.js"></script>
@@ -175,28 +175,34 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
-      </body>
+</body>
 
-      <script>
-        var xhr = new XMLHttpRequest();
-      
-        function addcart(x) {
-          xhr.open("POST", '/api/user/addcart', true);
-          xhr.setRequestHeader('Content-Type', 'application/json');
-          xhr.send(JSON.stringify({
-            book_id: x
-          }));
-      
-          xhr.onreadystatechange = function () {
-            if (this.readyState != 4) return;
-      
-            if (this.status == 200) {
-                var data = JSON.parse(this.responseText);
-                console.log(data);
-                
-            }
-          };
-        }
-      </script>
+<script>
+  var xhr = new XMLHttpRequest();
 
-</html >
+  function addcart(x) {
+    xhr.open("POST", '/api/user/addcart', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      book_id: x
+    }));
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+
+      if (this.status == 200) {
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+        Swal.fire({
+          icon: 'success',
+          title: 'เพิ่มสินค้าลงตะกร้าสำเร็จ!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    };
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+</html>

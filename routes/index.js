@@ -80,7 +80,7 @@ router.get('/profile', isLoggedin, getprofile, function (req, res, next) {
 router.get('/cart', isLoggedin, function (req, res, next) {
   let id = req.userData.userid;
   db.query(`SELECT * FROM cart JOIN book ON cart.book_id = book.book_id JOIN users ON cart.user_id = users.user_id WHERE users.user_id = ` + id, (err, result) => {
-    // return console.log(result)
+    // console.log(result)
     if (!req.cookies.token) {
       return res.redirect('/login');
     }
@@ -165,7 +165,8 @@ router.get('/order-detail', isLoggedin, function (req, res, next) {
 router.get('/checkout', isLoggedin, function (req, res, next) {
   // return console.log(req.userData.userid)
   let id = req.userData.userid;
-  db.query(`SELECT * FROM cart JOIN book ON cart.book_id = book.book_id JOIN users ON cart.user_id = users.user_id WHERE users.user_id = ` + id, (err, result) => {
+  // let id = req.params.id;
+  db.query(`SELECT * FROM cart JOIN book ON cart.book_id = book.book_id JOIN users ON cart.user_id = users.user_id WHERE users.user_id = ` + id ,(err, result) => {
     db.query(`SELECT (SUM(book.book_price)) AS total FROM cart JOIN book ON cart.book_id = book.book_id JOIN users ON cart.user_id = users.user_id WHERE users.user_id = ` + id, (err, result1) => {
       // return console.log(result)
       if (!req.cookies.token) {
@@ -183,9 +184,6 @@ router.get('/checkout', isLoggedin, function (req, res, next) {
 
 });
 
-router.post('/insert', isLoggedin, function (req, res, next) {
-  return console.log(req.body)
-})
 
 router.get('/login', function (req, res, next) {
   if (req.cookies.token) {

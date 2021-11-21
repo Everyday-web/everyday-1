@@ -1,188 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>EveryDay Checkout</title>
-    <link rel="icon" href="/images/fd_images/logo-1.png">
-    <!-- Bootstrap core CSS -->
-    <link href="/stylesheets/FrontEnd/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/fontawesome.css"> 
-    <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/style.css">
-    <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/owl.css">
-    <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/checkout.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <title>EveryDay Checkout</title>
+  <link rel="icon" href="/images/fd_images/logo-1.png">
+  <!-- Bootstrap core CSS -->
+  <link href="/stylesheets/FrontEnd/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <script>
-      function go() {
-        var imgObject = document.getElementById("payImage");
-        var pay = document.getElementById("pay");
-        imgObject.src = "/images/fd_images/qr code 2.png";
-        pay.innerHTML = "แนบหลักฐานการโอนเงิน : " ;
-      }
-      </script>
-      <script>
-        $(document).ready(function(){
-          $('#gopay').click(function(){
-            $('#addimage').toggle();
-          });
-        });
-        </script>
-  </head>
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/style.css">
+  <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/owl.css">
+  <link rel="stylesheet" href="/stylesheets/FrontEnd/assets/css/checkout.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+  <script>
+    function go() {
+      var imgObject = document.getElementById("payImage");
+      var pay = document.getElementById("pay");
+      imgObject.src = "/images/fd_images/qr code 2.png";
+      pay.innerHTML = "แนบหลักฐานการโอนเงิน : ";
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#gopay').click(function () {
+        $('#addimage').toggle();
+      });
+    });
+  </script>
+
+  <style>
+
+    .formms{
+      margin-top: 50px;
+      margin-left: 400px;
+    }
+    .return{
+      width: 100%;
+      margin-left: 5px;
+    }
+    .submit{
+      width: 100%;
+      margin-left: 5px;
+    }
+  </style>
+</head>
 
 
-    <!-- Header -->
-    <header class="">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container">
-            <a class="navbar-brand" href="/"><h2>every<em>day</em></h2></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="/">Home
-                    <span class="sr-only">(current)</span>
-                  </a> 
-                </li> 
-                <li class="nav-item">
-                  <a class="nav-link" href="/products">Our Products</a>
-                </li>
 
-                <% if(loginstate == 0){ %> 
-                  <a class="nav-link" href="/login">Log In</a>
-                <% } %>
-  
-                <% if(loginstate == 1){ %>
-                <li class="nav-item sub-menus">
-                  <a class="nav-link"> <%= usernamedata.username %>  </a>
-                  <ul>
+<body>
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+  <!-- Header -->
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <h2>every<em>day</em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products">Our Products</a>
+            </li>
+
+            <% if(loginstate==0){ %>
+              <a class="nav-link" href="/login">Log In</a>
+              <% } %>
+
+                <% if(loginstate==1){ %>
+                  <li class="nav-item sub-menus">
+                    <a class="nav-link">
+                      <%= usernamedata.username %>
+                    </a>
+                    <ul>
                       <li><a href="/profile"><i class="fa fa-edit"></i> Edit Profile</a></li>
                       <li><a href="/status"><i class="fa fa-clipboard"></i> Check status</a></li>
                       <li><a href="/logout"><i class="fa fa-sign-out"></i> Log out</a></li>
-                  </ul>
-  
-                </li>
-                <% } %>
+                    </ul>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
-                </li>
-                <!-- <li class="nav-item">
+                  </li>
+                  <% } %>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                    <!-- <li class="nav-item">
                   <a class="nav-link" href="#">Status</a>
                 </li> -->
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-       <!-- Page Content -->
-       <div class="page-heading checkout-heading header-text">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="text-content">
-                <h4>Thank you</h4>
-                <h2>EveryDay checkout</h2>
-              </div>
-            </div>
+  <!-- Page Content -->
+  <div class="page-heading checkout-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-content">
+            <h4>Thank you</h4>
+            <h2>EveryDay checkout</h2>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- ข้อมูลในการจัดส่ง -->
-      <div class="container">
-        <div class="row">
-          <form id="form-checkout" action="/api/user/checkout" method="POST" encType="multipart/form-data">
-          <div class="col-md-8">
-            
-            <fieldset class="field1"> 
-              <% if(data.length) {%>
-              <legend class="legend">ยืนยันคำสั่งซื้อ</legend>
-              <label for="cusname" class="font1"> ชื่อ-สกุล: </label><br>
-              <input type="text" id="fname" name="cusname" value="<%= data[0].user_cusname %>" disabled><br>
-              <label for="email" class="font1"> Email: </label><br>
-              <input type="email"id="email" name="email" value="<%= data[0].user_email %>" disabled><br>
-              <label for="phone" class="font1" > โทรศัพท์: </label><br>
-              <input type="tel" id="phone" name="phone" placeholder="+66" value="<%= data[0].user_tel %>" disabled><br>
-              <label for="address" class="font1"> ที่อยู่: </label><br>
-              <input type="text" id="address" name="address" value="<%= data[0].user_address %>" disabled><br>
-            <% } %> 
-           </fieldset>
-          </form>
-            <a href="/cart"><button class="return">BACK</button></a>
-          <a href="/insert"><input type="submit" value="ACCEPT" class="submit"></a>
-          </div>
-          <div class="col-md-4">
-            <fieldset class="field2">
-              <h2>สรุปรายการสินค้า</h2>
-              <label for="fbook">  </label><br>
-              <table>
-                <% if(data.length) { %>
-                  <% for(let i=0; i < data.length; i++) { %>
-                <tr>
-                  <td name="cartqty"><%= data[i].book_name %>x<%= data[i].cart_qty %></td>
-                  <td><span class="price" name="price"><%= data[i].book_price %></span>฿</td>
-                </tr>
+  <!-- ข้อมูลในการจัดส่ง -->
+  <div class="container">
+    <div class="row">
+      <form class="formms"id="form-checkout" action="/api/user/checkout" method="POST" encType="multipart/form-data">
+
+
+
+
+        <legend class="legend">ยืนยันคำสั่งซื้อ</legend>
+        <label for="cusname" class="font1"> ชื่อ-สกุล: </label><br>
+        <input type="text" id="fname" name="cusname" value="ชื่อ" disabled><br>
+        <label for="email" class="font1"> Email: </label><br>
+        <input type="email" id="email" name="email" value="นามสกุล" disabled><br>
+        <label for="phone" class="font1"> โทรศัพท์: </label><br>
+        <input type="tel" id="phone" name="phone" placeholder="+66" value="เบอร์" disabled><br>
+        <label for="address" class="font1"> ที่อยู่: </label><br>
+        <input type="text" id="address" name="address" value="ที่อยู่" disabled><br>
+        <button class="place" onclick="go()" id="gopay">Place order</button>
+        <img id="payImage" src="">
+        <label for="image" class="font1" id="pay"></label><br>
+        <input type="file" id="addimage" name="image" style="display:none"><br>
+
+     
+        <a href="/cart"><button class="return" >BACK</button></a>
+        <a href="#"><input type="submit" value="ACCEPT" class="submit"></a> 
+    
+      </form>
+    </div>
+    <div class="col-md-4">
+      <fieldset class="field2">
+        <h2>สรุปรายการสินค้า</h2>
+        <label for="fbook"> </label><br>
+        <table>
+          <% if(data.length) { %>
+            <% for(let i=0; i < data.length; i++) { %>
+              <tr>
+                <td name="cartqty">
+                  <%= data[i].book_name %>x<%= data[i].cart_qty %>
+                </td>
+                <td><span class="price" name="price">
+                    <%= data[i].book_price %>
+                  </span>฿</td>
+              </tr>
+              <% } %>
                 <% } %>
+                  <tr>
+                    <td>ค่าจัดส่ง</td>
+                    <td><span class="price">50.00฿</span></td>
+                  </tr>
+        </table><br>
+        <label class="font1" name="total">ราคารวมทั้งหมด <span class="price">
+            <% if(data1.length) { %>
+              <%= data1[0].total + 50 %>
                 <% } %>
-                <tr>
-                  <td>ค่าจัดส่ง</td>
-                  <td><span class="price">50.00฿</span></td>
-                </tr>
-              </table><br>
-              <label class="font1" name="total" >ราคารวมทั้งหมด <span class="price"><% if(data1.length) { %><%= data1[0].total + 50 %> <% } %></span>บาท</label> 
-            </fieldset>
-            <button class="place" onclick="go()" id="gopay">Place order</button>
-            <img id="payImage" src="">
-            <label for="image" class="font1" id="pay"></label><br>
-            <input type="file" id="addimage" name="image" style="display:none"><br>
+          </span>บาท</label>
+      </fieldset>
+    </div>
+
+  </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner-content">
+            <p>EveryDay BY My team</p>
           </div>
-       
         </div>
       </div>
-
-      <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="inner-content">
-                <p>EveryDay BY My team</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      
-    <!-- Bootstrap core JavaScript -->
-    <script src="/javascripts/fd_js/jquery.min.js"></script>
-    <script src="/javascripts/fd_js/bootstrap.bundle.min.js"></script>
-    <script src="/javascripts/fd_js/cart.js"></script>
+    </div>
+  </footer>
 
 
-    <!-- Additional Scripts -->
-    <script src="/javascripts/fd_js/custom.js"></script>
-    <script src="/javascripts/fd_js/owl.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="/javascripts/fd_js/jquery.min.js"></script>
+  <script src="/javascripts/fd_js/bootstrap.bundle.min.js"></script>
+  <script src="/javascripts/fd_js/cart.js"></script>
 
 
-  </body>
+  <!-- Additional Scripts -->
+  <script src="/javascripts/fd_js/custom.js"></script>
+  <script src="/javascripts/fd_js/owl.js"></script>
+
+
+</body>
+
 </html>
