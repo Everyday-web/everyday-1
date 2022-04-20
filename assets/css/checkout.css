@@ -1,0 +1,113 @@
+.field1{
+    border-color: #232323;
+    border: solid 2px;
+    margin-top: 120px;
+    border-radius: 16px;
+    padding: 16px;
+    width: 100%;
+}
+.field1 input{
+    margin: 0% 0% 4% 10%;
+    width: 80%;
+    font-family: 'Itim', cursive;
+}
+.field1 label{
+    margin-left: 10%;
+    font-size: 20px;
+    font-family: 'Itim', cursive;
+}
+.field2{
+    border-color: #232323;
+    border: solid 2px;
+    border-radius: 16px;
+    margin-top: 144px;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Itim', cursive;
+}
+.legend {
+    color:#232323;
+    width: 220px;
+   background-color: #008ecc;
+   border-radius: 16px;
+   padding: 8px 8px 8px 48px;
+   font-size: 24px;
+   font-family: 'Itim', cursive;
+  }
+.submit{
+    margin: 20px 20% 0 28%;
+    padding: 12px;
+    font-size: 20px;
+    background-color: #008ecc;
+    border-radius: 16px;
+}
+.return{
+    margin: 20px 0 0 24%;
+    padding: 12px;
+    font-size: 20px;
+    background-color: #008ecc;
+    border-radius: 16px;
+}
+.place{
+    width: 100%;
+    margin-top: 4%;
+    padding: 4px;
+    font-size: 20px;
+    background-color: #008ecc;
+    border-radius: 16px;
+}
+
+.font1{
+    font-size: 20px;
+}
+.price{
+    margin-left: 80px;
+}
+
+#fname,#email,#phone,#address{
+    width: 80%;
+    padding: 10px;
+    border-radius: 16px;
+    
+}
+
+#fbook{
+    padding: 10px;
+}
+
+#payImage{
+    width: 60%;
+    margin: 5% 20%;
+}
+#pay{
+    font-size: 20px;
+    font-family: 'Itim', cursive;
+}
+input[type=file]{
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .field2{
+        margin-top: 120px;
+    }
+    
+    .submit{
+        margin: 20px 0 0 28%;
+    }
+    .return{
+        margin: 20px 0 0 18%;
+    
+  }
+}
+  @media (max-width: 992px){
+    .field2{
+        margin-top: 120px;
+    }
+    
+    .submit{
+        margin: 20px 0 0 28%;
+    }
+    .return{
+        margin: 20px 0 0 18%;
+    }
+}

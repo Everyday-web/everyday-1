@@ -1,9 +1,11 @@
+
 body {
   background: #eee;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
+
 
 .clearfix {
   content: "";
@@ -100,6 +102,9 @@ a:hover {
 .product img {
   width: 50%;
   margin: 0.5% 25%;
+
+  margin: 0.4% 24%;
+
 }
 
 .product header, .product .content {
@@ -143,7 +148,11 @@ a:hover {
 .product-header h3 {
   background: #008ecc;
   color: #fff;
+
   font-size: 22px;
+
+  font-size: 20px;
+
   font-weight: 300;
   line-height: 49px;
   margin: 0;
@@ -325,4 +334,137 @@ a:hover {
 
 .added {
   margin: 0 -50px 0 0 !important;
+}
+@media (max-width: 768px) {
+
+  .product-header h3 {
+    font-size: 16px;
+    padding: 0 8px;
+    text-align: center;
+  }
+  .product img {
+    width: 70%;
+    margin: 16%;
+  }
+  .product .content {
+    padding: 0 10px;
+  }
+  
+  .product h1 {
+    font-size: 14px;
+    margin: 8px 0 10px 0;
+  }
+  .product p {
+    font-size: 10px;
+  }
+  
+  .product footer .price {
+    padding: 0 8px;
+  }
+  
+  .product footer .full-price {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+  
+  .qt {
+    font-size: 14px;
+    width: 10%;
+  }
+  
+  .qt-plus, .qt-minus {
+    font-size: 14px;
+  }
+  #site-footer {
+    margin: 16px 0 0 0;
+  }
+  
+  #site-footer {
+    padding: 20px;
+    text-align: left;
+    font-family: 'Itim', cursive;
+  }
+  
+  #site-footer h1 {
+    font-size: 18px;
+    padding: 8px 40px;
+  }
+  
+  #site-footer h2 {
+    font-size: 16px;
+  }
+  
+  #site-footer h3 {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+  .btn {
+    width: 200px;
+  }
+}
+@media (max-width: 992px){
+  .product-header h3 {
+    font-size: 16px;
+    padding: 0 8px;
+    text-align: center;
+  }
+  .product img {
+    width: 70%;
+    margin: 8% 0 0 16%;
+  }
+  .product .content {
+    padding: 0 10px;
+  }
+  
+  .product h1 {
+    font-size: 16px;
+    margin: 8px 0 10px 0;
+  }
+  .product p {
+    font-size: 14px;
+  }
+  
+  .product footer .price {
+    padding: 0 8px;
+  }
+  
+  .product footer .full-price {
+    font-size: 16px;
+    padding: 0 4px;
+  }
+  
+  .qt {
+    font-size: 16px;
+    width: 10%;
+  }
+  
+  .qt-plus, .qt-minus {
+    font-size: 16px;
+  }
+  #site-footer {
+    margin: 18px 0 0 0;
+  }
+  
+  #site-footer {
+    padding: 20px;
+    text-align: left;
+    font-family: 'Itim', cursive;
+  }
+  
+  #site-footer h1 {
+    font-size: 18px;
+    padding: 8px 40px;
+  }
+  
+  #site-footer h2 {
+    font-size: 16px;
+  }
+  
+  #site-footer h3 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  .btn {
+    width: 200px;
+  }
 }
