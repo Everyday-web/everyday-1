@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>EveryDay Checkout</title>
+    <link rel="icon" href="./assets/images/logo-1.png">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+      function go() {
+        var imgObject = document.getElementById("payImage");
+        var pay = document.getElementById("pay");
+        imgObject.src = "./assets/images/qr code 2.png";
+        pay.innerHTML = "แนบหลักฐานการโอนเงิน : " ;
+      }
+      </script>
+      <script>
+        $(document).ready(function(){
+          $('#gopay').click(function(){
+            $('#addimage').toggle();
+          });
+        });
+        </script>
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="index.html"><h2>every<em>day</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                  </a> 
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link" href="products.html">Our Products</a>
+                </li>
+                <li class="nav-item sub-menus">
+                  <a class="nav-link" href="login.html">Log In</a>
+                  <ul>
+                      <li><a href="profile.html"><i class="fa fa-edit"></i> Edit Profile</a></li>
+                      <li><a href="status.html"><i class="fa fa-clipboard"></i> Check status</a></li>
+                      <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Status</a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+       <!-- Page Content -->
+       <div class="page-heading checkout-heading header-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="text-content">
+                <h4>Thank you</h4>
+                <h2>EveryDay checkout</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ข้อมูลในการจัดส่ง -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <fieldset class="field1">
+              <legend class="legend">ยืนยันคำสั่งซื้อ</legend>
+              <label for="fname" class="font1"> ชื่อ-สกุล: </label><br>
+              <input type="text" id="fname" name="fname" placeholder="กรอกชื่อ-สกุล"><br>
+              <label for="email" class="font1"> Email: </label><br>
+              <input type="email"id="email" name="email" "><br>
+              <label for="phone" class="font1" > โทรศัพท์: </label><br>
+              <input type="tel" id="phone" name="phone" placeholder="+66"><br>
+              <label for="address" class="font1"> ที่อยู่: </label><br>
+              <input type="text" id="address" name="address"><br>
+            </fieldset>
+            <a href="cart.html"><button class="return">BACK</button></a>
+          <a href="index.html"><input type="submit" value="ACCEPT" class="submit"></a>
+          </div>
+          <div class="col-md-4">
+            <fieldset class="field2">
+              <h2>สรุปรายการสินค้า</h2>
+              <label for="fbook">  </label><br>
+              <table>
+                <tr>
+                  <td>Witchoar (วิชชอร์) เล่ม 2 : เปลวไฟแห่งเนโคร x 2</td>
+                  <td>700.00฿</td>
+                </tr>
+                <tr>
+                  <td>Witchoar (วิชชอร์) เล่ม 3 : ถ้วยเเก้วแห่งโมนาเซีย</td>
+                  <td>310.00฿</td>
+                </tr>
+                <tr>
+                  <td>ค่าจัดส่ง</td>
+                  <td>50.00฿</td>
+                </tr>
+              </table><br>
+              <label class="font1">ราคารวมทั้งหมด <span class="price">1060.00</span>บาท</label> 
+            </fieldset>
+            <button class="place" onclick="go()" id="gopay">Place order</button>
+            <img id="payImage" src="">
+            <label for="image" class="font1" id="pay"></label><br>
+            <input type="file" id="addimage" name="image" style="display:none"><br>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="inner-content">
+                <p>EveryDay BY My team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+      <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+
+
+  </body>
+</html>

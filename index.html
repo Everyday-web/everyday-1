@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>EveryDay</title>
+    <link rel="icon" href="./assets/images/logo-1.png">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/card.css">
 
   </head>
@@ -42,12 +43,6 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <div class="search_box">
-                  <div class="search_btn"><i class="fa fa-search"></i></div>
-                  <input type="text" class="input_search" placeholder="Search">
-                </div>
-              </li> 
-              <li class="nav-item active">
                 <a class="nav-link" href="index.html">Home
                   <span class="sr-only">(current)</span>
                 </a>
@@ -55,19 +50,20 @@
               <li class="nav-item">
                 <a class="nav-link" href="products.html">Our Products</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item sub-menus">
                 <a class="nav-link" href="login.html">Log In</a>
+                <ul>
+                    <li><a href="profile.html"><i class="fa fa-edit"></i> Edit Profile</a></li>
+                    <li><a href="status.html"><i class="fa fa-clipboard"></i> Check status</a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> Log out</a></li>
+                </ul>
               </li>
               <li class="nav-item">
-                <div class="navbar-icon">
-                  <i class="fa fa-shopping-cart"></i>
-                </div>
+                <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i></a>
               </li>
-              <li class="nav-item">
-                <div class="navbar-icon">
-                  <i class="fa fa-clipboard"></i>
-                </div>
-              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Status</a>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -95,6 +91,9 @@
     <!-- Banner Ends Here -->
 
     <!--start card-->
+    <div class="card-bestseller">
+      <p><span>BEST</span> SELLER</p>
+    </div>
       <ul class="cards">
           <li>
               <a href="#" class="card">
@@ -137,17 +136,17 @@
         </li>
         <li>
           <a href="#" class="card">
-              <img src="./assets/images/product_06.jpg" class="card__image">
+              <img src="./assets/images/product_05.jpg" class="card__image">
               <div class="card__overlay">
                   <div class="card__header">
                       <div class="card__header-text">
-                          <h1>Witchoar (วิชชอร์) 6</h1>
+                          <h1>Witchoar (วิชชอร์) 5</h1>
                       </div>
                   </div>
                   <p>
-                    เหล่ามาสเตอร์แห่งร้านน้ำชาวิทาเรียแน่ใจว่า เวลาแห่งการปะทะกระชั้นเข้ามาทุกที เมื่อฮอปกินส์ทำให้หิมะตกครั้งแรก เพราะหวังจะเจาะบาร์เรียร์เมืองวิชชอร์เข้ามา 
-                  ผู้นำที่แท้จริงของเหล่าฮอปกินส์เริ่มร้อนรนอย่างเห็นได้ชัด
-                  ขณะเดียวกันเจย์ก็ได้รับภารกิจใช้หนี้หาไข่ออสทาราจากทรอย และเขาคงสบายใจกว่านี้ หากไข่ออสทาราใบนี้ไม่ได้เป็นไข่ของหนึ่งในคนจากตระกูลซิมป์สัน</p>
+                    จดหมายจากเจย์คนก่อน หอลืมชาติ และแซมป์สันเพราะระดับของพ่อมดในโลกเวทมนตร์และได้กับค่าลดหย่อนภาษีธุรกิจ
+                    เจย์จึงต้องเดินทางไปเข้าทดสอบเมจิกลอสต์ พร้อมกับพนักงานคนอื่นของวิทาเรียทีรูม แต่การประเมินครั้งนี้ไม่ธรรมดา เพราะเมืองที่จัดการทดสอบคือ 
+                    มาเจนต้า สถานที่เกิดเหตุการณ์ร้ายในความทรงจำของโซอี้ท่ามกลางปัญหาที่ประดังเข้ามา ความช่วยเหลือก็มาถึงเเละครั้งนี้มันมาจากมือของ แมทธิว ฮอปกินส์</p>
               </div>
           </a>
       </li>
@@ -165,7 +164,7 @@
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+              <a href="product-detail.html"><img src="assets/images/product_01.jpg" alt=""></a>
               <div class="down-content">
                 <a href="#"><h4>Witchoar (วิชชอร์) </h4><h4>เล่ม 1 : หยดน้ำแห่งกัลดราบก</h4></a>
                 <h6>220.00 บาท</h6>
@@ -173,8 +172,8 @@
                   สิ่งที่ต้องทำต่อไปในอนาคต โดยเฉพาะทำไมเขาถึงมีพลังที่น่าจะเป็น ‘เวทมนตร์’ ชายหนุ่มอาศัยข้อความในสมุด
                   บันทึกทบทวนตัวตนในอดีต และกระดาษเตือนความจำที่จดไว้ทำให้เขาต้องเดินทางไปเริ่มชีวิตใหม่ที่เมืองวิชชอร์
                   เป็นพนักงานในร้านน้ำชาชื่อ วิทาเรียทีรูม
-                  แต่ชีวิตใหม่ที่น่าจะเรียบง่าย กลับไม่สงบอย่างที่คิด ไม่นับกลุ่มคนลึกลับที่ตามล่าเขา ก็ยังมี โซอี้ หญิง
-                  สาวผู้ดื้อดึงจะเป็นพนักงานร้านน้ำชา และร้านน้ำชาที่ไม่ใช่ร้านธรรมดา เพราะมันเป็นร้านน้ำชาของพ่อมด!</p>
+                  แต่ชีวิตใหม่ที่น่าจะเรียบง่าย กลับไม่สงบอย่างที่คิด ...</p>
+                  <i class="fa fa-cart-plus"></i>
               </div>
             </div>
           </div>
@@ -189,24 +188,10 @@
                   เจย์ต้องลงแข่งขันในไลต์ก็อดเฟสติวัล ตามธรรมเนียมผู้เริ่มต้นฝึกฝนในศาสตร์กัลดราบก
                   และรางวัลใหญ่ของการแข่งครั้งนี้ไม่ธรรมดา เพราะมันคือสิทธิ์เข้าทำงานในวิทาเรียทีรูม
                   ซึ่งเจย์จะต้องเสียมันไป หากพ่ายแพ้ในการแข่ง
-                  
                   ท่ามกลางความกดดันทั้งหลาย พวกฮอปกินส์ก็ออกล่าตัวเจย์อีกครั้ง
                   หนนี้พวกนั้นไม่สนใจว่าจะได้ตัวเจย์ที่ยังมีลมหายใจหรือไม่
                   เพราะพวกเขาต้องการแม้เหลือเพียงวิญญาณ!</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_03.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Witchoar (วิชชอร์) </h4><h4>เล่ม 3 : ถ้วยเเก้วแห่งโมนาเซีย</h4></a>
-                <h6>310.00 บาท</h6>
-                <p>ความลับของซิมป์สัน ศาสตร์อัญเชิญปีศาจ เเละ Trick or Treat!
-                  เหล่ามาสเตอร์ต้องประหลาดใจอีกครั้ง
-                  เมื่อเจย์ครอบครอง อัสโมว จิตวิญญาณของเถ้ากระดูกที่บ่งชี้ว่าเขาคือ สปิริเชียล พ่อมดผู้ควบคุมปีศาจ
-                  เเน่นอน มันนำปัญหามาให้เจย์ พอๆ กับที่ช่วยคลายปมปริศนา หนึ่งในนั้นคือ การเผชิญหน้านักสะสมปีศาจมากเล่ห์อย่าง ชาร์ม ซิมป์สัน
-                  การฟื้นความรู้ศาสตร์เวทย์มนตร์ว่ายากเเล้ว เเต่การรับมือกับซิมป์สันหลายคนพร้อมกันอาจยากยิ่งกว่า!</p>
+                  <i class="fa fa-cart-plus"></i>
               </div>
             </div>
           </div>
@@ -218,31 +203,15 @@
                 <h6>310.00 บาท</h6>
                 <p>ผู้หญิงของซิมป์สัน เด็กใหม่
                   และความลับของ เจย์ สก็อต
-                  
                   เจย์ต้องเข้ารับการทดสอบสมรรถภาพ
                   เพื่อขึ้นทะเบียนพ่อมดตามกฏโลกเวทมนตร์
                   แต่ในเมื่อใครๆ ต่างก็อยากรู้เรื่องของเขา
                   การทดสอบที่ไม่ธรรมดาหนนี้
                   จึงเป็นโอกาสของทั้งสภากลาง ผู้ประเมิน
                   รวมถึงหัวหน้ามาสเตอร์แห่งร้านวิทาเรียทีรูมที่จะล้วงมันออกมา
-                  
                   ขณะที่ปริศนาของเจย์เริ่มคลี่คลาย
                   ฮอปกินส์ก็เริ่มเคลื่อนไหว และครั้งนี้อาจต้องปะทะกับเหล่าซิมป์สัน!</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="assets/images/product_05.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Witchoar (วิชชอร์) </h4><h4>เล่ม 5 : กาน้ำแห่งโฮโนรุอุส</h4></a>
-                <h6>290.00 บาท</h6>
-                <p>
-                  จดหมายจากเจย์คนก่อน หอลืมชาติ และแซมป์สัน
-                  
-                  เพราะระดับของพ่อมดในโลกเวทมนตร์และได้กับค่าลดหย่อนภาษีธุรกิจ เจย์จึงต้องเดินทางไปเข้าทดสอบเมจิกลอสต์ พร้อมกับพนักงานคนอื่นของวิทาเรียทีรูม แต่การประเมินครั้งนี้ไม่ธรรมดา เพราะเมืองที่จัดการทดสอบคือ มาเจนต้า สถานที่เกิดเหตุการณ์ร้ายในความทรงจำของโซอี้
-                  
-                  ท่ามกลางปัญหาที่ประดังเข้ามา ความช่วยเหลือก็มาถึงเเละครั้งนี้มันมาจากมือของ แมทธิว ฮอปกินส์</p>
+                  <i class="fa fa-cart-plus"></i>
               </div>
             </div>
           </div>
@@ -250,11 +219,27 @@
             <div class="product-item">
               <a href="#"><img src="assets/images/product_06.jpg" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Witchoar (วิชชอร์) </h4><h4>เล่ม 6 : นาฬิกาทรายแห่งอะบลามีลิน</h4></a>
-                <h6>280.00 บาท</h6>
-                <p>เหล่ามาสเตอร์แห่งร้านน้ำชาวิทาเรียแน่ใจว่า เวลาแห่งการปะทะกระชั้นเข้ามาทุกที เมื่อฮอปกินส์ทำให้หิมะตกครั้งแรก เพราะหวังจะเจาะบาร์เรียร์เมืองวิชชอร์เข้ามา 
-                  ผู้นำที่แท้จริงของเหล่าฮอปกินส์เริ่มร้อนรนอย่างเห็นได้ชัด
-                  ขณะเดียวกันเจย์ก็ได้รับภารกิจใช้หนี้หาไข่ออสทาราจากทรอย และเขาคงสบายใจกว่านี้ หากไข่ออสทาราใบนี้ไม่ได้เป็นไข่ของหนึ่งในคนจากตระกูลซิมป์สัน </p>
+                <a href="#"><h4>ครอบครัวตึ๋งหนืดตะลุยวิทย์ </h4><h4>ตอน ไดโนเสาร์สมองกล (ฉบับการ์ตูน)</h4></a>
+                <h6>150.00 บาท</h6>
+                <p>
+                  "โทรุ"  "ฮารุ" และ "จอห์น" ได้เข้าไปผจญภัยในไดโนพาร์ก สวนสนุกโลกล้านปีที่เต็มไปด้วยหุ่นยนต์ไดโนเสาร์สุดเท่ 
+                  แต่ไดโนเสาร์เหล่านี้มีพฤติกรรมแปลก ๆ เพราะมีคนไปดัดแปลงโปรแกรมเข้า 
+                  "ดร.วัน" จึงต้องขอความช่วยเหลือจากเด็ก ๆ ทั้งสาม เพื่อช่วยแก้ไขโคดดิ้ง ทำให้หุ่นยนต์ไดโนเสาร์กลับมาเป็นเหมือนเดิมให้ได้!</p>
+                  <i class="fa fa-cart-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="#"><img src="assets/images/product_07.jpg" alt=""></a>
+              <div class="down-content">
+                <a href="#"><h4>Why?</h4><h4>ความปลอดภัยในชีวิตประจำวัน (ฉบับการ์ตูน)</h4></a>
+                <h6>159.00 บาท</h6>
+                <p>
+                  "เซพี" พ่อมดน้อยแห่งโรงเรียนแห่งเวทมนตร์ ตั้งใจจะเสกเมล็ดพันธุ์โชคดี แต่ดันทำพลาดเสกเมล็ดพันธุ์สุดอันตรายขึ้นมา 
+                  และเมล็ดพันธุ์นี้เผอิญไปติดผมเด็กสาวผู้ร่าเริง เฟียนา ทำให้เธอเสี่ยงประสบอุบัติเหตุต่อเนื่อง 15 วัน เซพีและเซฟเพื่อนร่วมห้องที่แอบชอบเธอ
+                  จึงต้องพยายามทุกวิถีทางช่วยเฟียนาจากอุบัติเหตุรอบตัวต่าง ๆ มากมาย มาดูกันว่าทั้งคู่ จะช่วยเฟียนาจากสารพัดอันตรายสำเร็จหรือไม่!</p>
+                  <i class="fa fa-cart-plus"></i>
               </div>
             </div>
           </div>
@@ -285,22 +270,6 @@
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
 
   </body>
 
