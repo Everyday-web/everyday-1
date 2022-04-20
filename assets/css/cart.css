@@ -1,3 +1,12 @@
+
+body {
+  background: #eee;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
 .clearfix {
   content: "";
   display: table;
@@ -92,7 +101,10 @@ a:hover {
 
 .product img {
   width: 50%;
+  margin: 0.5% 25%;
+
   margin: 0.4% 24%;
+
 }
 
 .product header, .product .content {
@@ -136,7 +148,11 @@ a:hover {
 .product-header h3 {
   background: #008ecc;
   color: #fff;
+
+  font-size: 22px;
+
   font-size: 20px;
+
   font-weight: 300;
   line-height: 49px;
   margin: 0;
